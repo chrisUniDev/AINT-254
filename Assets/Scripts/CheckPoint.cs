@@ -6,7 +6,7 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour {
 
 
-	public GameObject[] Ships;
+	GameObject[] Ships;
 	GameObject[] ShipsMesh;
 
 	public bool disableUI;
@@ -42,7 +42,7 @@ public class CheckPoint : MonoBehaviour {
 		notLastCheckpoint = true;
 		disableUI = false;
 		//Add all AI Ships aswell as the player!
-		//Ships = GameObject.FindGameObjectsWithTag ("AIShip");
+		Ships = GameObject.FindGameObjectsWithTag ("Ship");
 
 		ShipsMesh = new GameObject[Ships.Length];
 
