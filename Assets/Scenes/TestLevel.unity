@@ -696,7 +696,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1547521092
+  randomSeed: -1601572789
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3857,6 +3857,7 @@ GameObject:
   - component: {fileID: 767526889}
   - component: {fileID: 767526888}
   - component: {fileID: 767526887}
+  - component: {fileID: 767526892}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3934,6 +3935,18 @@ Transform:
   m_Father: {fileID: 850947931}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 13.106001, y: 185.97899, z: 1.36}
+--- !u!114 &767526892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767526886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4e613e1f94d03514babe059f480d8a76, type: 2}
 --- !u!1 &850947927
 GameObject:
   m_ObjectHideFlags: 0
