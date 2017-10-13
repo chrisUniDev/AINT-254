@@ -65,11 +65,13 @@ public class AIMovement : MonoBehaviour {
             //transform.position += transform.forward * movementSpeed / 2 * Time.deltaTime;
             SpeedFactor = AccelerationCurve.Evaluate(1 * Time.deltaTime);
             CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed);
         } else {
             SpeedFactor = AccelerationCurve.Evaluate(5 * Time.deltaTime);
             CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed); 
         }
     }
 
