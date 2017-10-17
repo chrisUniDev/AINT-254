@@ -8,6 +8,8 @@ public class AIMovement : MonoBehaviour {
 
     public Transform path;
 
+    private Transform Player;
+
     private List<Transform> nodes;
     private int currentNode = 0;
 
@@ -18,6 +20,12 @@ public class AIMovement : MonoBehaviour {
     public float DodgeMultiplier = 10f;
     public AnimationCurve AccelerationCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
     public Vector2 SpeedRange = new Vector2(50.0f, 100.0f);
+    [SerializeField]
+    private float BankAngleSmooth = 2.5f; //how fast you tilt when turning
+    [SerializeField]
+    private Vector3 Maneuverability = new Vector3(75.0f, 75.0f, -50.0f); // how fast you turn
+    [SerializeField]
+    private float MaxBankAngleOnTurn = 45.0f; //maxium tilt when turning
 
     float detectionDistance = 20f;
     float frontDetectionDistance = 180f;
@@ -27,7 +35,7 @@ public class AIMovement : MonoBehaviour {
     void Start() {
 
         rigidBody = GetComponent<Rigidbody>();
-
+        Player = transform;
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
 
@@ -48,30 +56,52 @@ public class AIMovement : MonoBehaviour {
         CheckWayPointDistance();
     }
 
+    public float SpeedFactor
+    {
+        get
+        {
+            float dis = Vector3.Distance(transform.position, nodes[currentNode].position);
+
+            return AccelerationCurve.Evaluate(dis % 0.1f);
+        }
+    }
+
+    public float CurrentSpeed
+    {
+        get
+        {
+            return Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
+        }
+    }
+
     void Turn()
     {
         Vector3 pos = nodes[currentNode].position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+        float angle = Vector3.Angle(Player.position, pos);
+        float sinAngle = Mathf.Sign(angle);
+
+        Player.localRotation = Quaternion.Slerp(Player.localRotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 
     void Move()
     {
 
-        float CurrentSpeed;
-        float SpeedFactor;
+        //float CurrentSpeed;
+        //float SpeedFactor;
 
         if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode) {
             //transform.position += transform.forward * movementSpeed / 2 * Time.deltaTime;
-            SpeedFactor = AccelerationCurve.Evaluate(1 * Time.deltaTime);
-            CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
-            rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed);
+            //SpeedFactor = AccelerationCurve.Evaluate(1 * Time.deltaTime);
+            //CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
+            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            //rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed);
         } else {
-            SpeedFactor = AccelerationCurve.Evaluate(5 * Time.deltaTime);
-            CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
-            rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed); 
+            //SpeedFactor = AccelerationCurve.Evaluate(5 * Time.deltaTime);
+            //CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
+            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            //rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed); 
         }
     }
 
@@ -99,17 +129,17 @@ public class AIMovement : MonoBehaviour {
         Vector3 HorizonalCenterBack = transform.position - transform.forward * rayCastOffset;
 
 
-        if (Physics.SphereCast(transform.position, detectionDistance, transform.forward, out hit, 50))
-        {
-            Debug.Log("Opps we Hit");
+        //if (Physics.SphereCast(transform.position, detectionDistance, transform.forward, out hit, 50))
+        //{
+        //    Debug.Log("Opps we Hit");
             
             
-        }
+        //}
 
 
 
 
-        /*
+        
                 if (Physics.Raycast(left, transform.forward, out hit, frontDetectionDistance)) {
                     raycastOffset += Vector3.right;
                     Debug.DrawRay (left, transform.forward * frontDetectionDistance, Color.cyan);
@@ -175,7 +205,7 @@ public class AIMovement : MonoBehaviour {
                     Debug.DrawRay (HorizonalCenterFront,Quaternion.AngleAxis(-frontCenterAngle, transform.forward)* -transform.right * detectionDistance /2, Color.cyan);
                     Debug.DrawRay (HorizonalCenterBack,Quaternion.AngleAxis(-frontCenterAngle, transform.forward)* -transform.right * detectionDistance /2, Color.cyan);
                 }
-                */
+                
                 if (raycastOffset != Vector3.zero) {
                     transform.Rotate (raycastOffset * DodgeMultiplier * Time.deltaTime);
                 } else {
@@ -205,9 +235,9 @@ public class AIMovement : MonoBehaviour {
 
     
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(this.transform.position, detectionDistance);
-    }
+    //void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(this.transform.position, detectionDistance);
+    //}
 }
