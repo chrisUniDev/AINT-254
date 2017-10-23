@@ -79,11 +79,11 @@ public class AIMovement : MonoBehaviour {
     {
         Vector3 pos = nodes[currentNode].position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
         float angle = Vector3.Angle(Player.position, pos);
         float sinAngle = Mathf.Sign(angle);
-
-        Player.localRotation = Quaternion.Slerp(Player.localRotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+      
+        //Player.localRotation = Quaternion.Slerp(Player.localRotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 
     void Move()

@@ -6,7 +6,7 @@ using UnityEngine;
 public class shipCheckPoint : MonoBehaviour {
 
 	public string Name = "NAME";
-    public GameObject checkpoints;
+    private GameObject checkpoints;
     //public Transform[] checkPointArray;
 	public int currentCheckPoint = 0;
 	public int currentLap = 0;
@@ -22,7 +22,8 @@ public class shipCheckPoint : MonoBehaviour {
     // Use this for initialization
     void Start () 
 	{
-		startPos = transform.position;
+        checkpoints = GameObject.FindGameObjectWithTag("checkpoints");
+        startPos = transform.position;
         Transform[] nodes = checkpoints.GetComponentsInChildren<Transform>();
 
         for (int i = 0; i < nodes.Length; i++)

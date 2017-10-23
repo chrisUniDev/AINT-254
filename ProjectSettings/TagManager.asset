@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ShipMesh
   - Ship
+  - checkpoints
   layers:
   - Default
   - TransparentFX
