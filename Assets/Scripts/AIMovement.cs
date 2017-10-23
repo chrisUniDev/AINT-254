@@ -54,6 +54,7 @@ public class AIMovement : MonoBehaviour {
         Pathfinding();
         Move();
         CheckWayPointDistance();
+        
     }
 
     public float SpeedFactor
@@ -225,6 +226,7 @@ public class AIMovement : MonoBehaviour {
             else
             {
                 currentNode++;
+                Turn();
             }
         }
     }
