@@ -226,7 +226,7 @@ public class AIMovement : MonoBehaviour {
             else
             {
                 currentNode++;
-                Turn();
+                
             }
         }
     }

@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3672303}
   m_LocalRotation: {x: -0, y: -0.36628166, z: -0, w: 0.9305041}
-  m_LocalPosition: {x: -182.4, y: -10.9, z: 6.4878983}
+  m_LocalPosition: {x: -170.3, y: -10.9, z: 6.4878983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2080812460}
@@ -252,7 +252,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 30, z: 30}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &188850612
 Prefab:
@@ -580,7 +580,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &466487149
 MonoBehaviour:
@@ -640,7 +640,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &484100044
 MonoBehaviour:
@@ -668,7 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486820263}
   m_Layer: 0
-  m_Name: Checkpoint (9) final
+  m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1036,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 564060585
+  randomSeed: -548820798
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4381,7 +4381,7 @@ GameObject:
   - component: {fileID: 850947933}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4392,8 +4392,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850947927}
-  m_LocalRotation: {x: -0, y: 0.99991214, z: -0, w: 0.01325735}
-  m_LocalPosition: {x: 4, y: -19.1, z: 148.2}
+  m_LocalRotation: {x: -0, y: 0.93071544, z: -0, w: 0.3657442}
+  m_LocalPosition: {x: -402.2009, y: -19.1, z: 306.96423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1103142997}
@@ -4401,7 +4401,7 @@ Transform:
   - {fileID: 731126572}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 178.481, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 137.093, z: 0}
 --- !u!114 &850947932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4723,9 +4723,10 @@ GameObject:
   - component: {fileID: 1103143000}
   - component: {fileID: 1103142999}
   - component: {fileID: 1103142998}
+  - component: {fileID: 1103143001}
   m_Layer: 0
   m_Name: ShipMesh
-  m_TagString: Untagged
+  m_TagString: ShipMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4795,6 +4796,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1103142996}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1103143001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103142996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b00bdb8dfc4eb4d8c1ce172aef3a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Player
+  checkpoints: {fileID: 1487155181}
+  currentCheckPoint: 0
+  currentLap: 0
+  startPos: {x: 0, y: 0, z: 0}
+  DistanceToNextCheckPoint: 0
+  racePosition: 0
+  checkpointNodes: []
 --- !u!1 &1137712770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,7 +4912,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1149002843
 MonoBehaviour:
@@ -5116,14 +5136,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1246598775}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.29, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.35337332, z: -0, w: 0.9354824}
+  m_LocalPosition: {x: -301, y: 0, z: 198.61292}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1742222313}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -41.388, z: 0}
 --- !u!1 &1264496967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5273,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1359853743
 MonoBehaviour:
@@ -5594,7 +5614,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1622191925
 MonoBehaviour:
@@ -5684,7 +5704,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1669888635
 MonoBehaviour:
@@ -5744,7 +5764,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 100, y: 100, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1675029306
 MonoBehaviour:
@@ -5819,7 +5839,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1742222312}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.000000749014}
-  m_LocalPosition: {x: -13.7, y: 0, z: 52.5}
+  m_LocalPosition: {x: -59.7, y: -24.1, z: 93}
   m_LocalScale: {x: 14.590275, y: 14.590275, z: 21.885412}
   m_Children:
   - {fileID: 1988486167}
@@ -5969,14 +5989,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798484797}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.7, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.35337332, z: -0, w: 0.9354824}
+  m_LocalPosition: {x: -268.43146, y: 0, z: 227.3135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1015862808}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -41.388, z: 0}
 --- !u!1 &1816065032
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,7 +6339,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 80, y: 80, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2090474612
 GameObject:
