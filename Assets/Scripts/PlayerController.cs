@@ -97,7 +97,9 @@ public class PlayerController : MonoBehaviour {
     {
         get
         {
+            
             return m_spaceshipAccelerationCurve.Evaluate(SmoothedInput.w);
+            
         }
     }
 

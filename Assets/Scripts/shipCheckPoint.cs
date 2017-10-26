@@ -44,6 +44,10 @@ public class shipCheckPoint : MonoBehaviour {
 	public int GetRacePos{
 		set{ racePosition = value;
 		}
+        get
+        {
+            return racePosition;
+        }
 	}
 
 

@@ -27,6 +27,10 @@ public class AIMovement : MonoBehaviour {
     [SerializeField]
     private float MaxBankAngleOnTurn = 45.0f; //maxium tilt when turning
 
+    private Vector3[] RotationDirections = { Vector3.right, Vector3.up, Vector3.forward };
+
+    private Quaternion m_InitialRotation;
+
     float detectionDistance = 20f;
     float frontDetectionDistance = 180f;
     float rayCastOffset = 5f;
@@ -36,6 +40,7 @@ public class AIMovement : MonoBehaviour {
 
         rigidBody = GetComponent<Rigidbody>();
         Player = transform;
+        m_InitialRotation = gameObject.transform.localRotation;
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
 
@@ -62,8 +67,8 @@ public class AIMovement : MonoBehaviour {
         get
         {
             float dis = Vector3.Distance(transform.position, nodes[currentNode].position);
-
-            return AccelerationCurve.Evaluate(dis % 0.1f);
+   
+            return AccelerationCurve.Evaluate(dis * 0.001f);
         }
     }
 
@@ -77,13 +82,23 @@ public class AIMovement : MonoBehaviour {
 
     void Turn()
     {
+        Vector3 rotationsdirections = new Vector3(1,1,1);
+
+
+        for (int i = 0; i < 3; ++i)
+        {
+            //Player.localRotation *= Quaternion.AngleAxis(Player.transform.position[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
+        }
+
+
         Vector3 pos = nodes[currentNode].position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
         float angle = Vector3.Angle(Player.position, pos);
         float sinAngle = Mathf.Sign(angle);
-      
+
         //Player.localRotation = Quaternion.Slerp(Player.localRotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+        //Player.localRotation = Quaternion.Slerp(rotation, m_InitialRotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 
     void Move()
@@ -92,18 +107,15 @@ public class AIMovement : MonoBehaviour {
         //float CurrentSpeed;
         //float SpeedFactor;
 
+        transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+        /*
         if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode) {
             //transform.position += transform.forward * movementSpeed / 2 * Time.deltaTime;
             //SpeedFactor = AccelerationCurve.Evaluate(1 * Time.deltaTime);
             //CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+            
             //rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed);
-        } else {
-            //SpeedFactor = AccelerationCurve.Evaluate(5 * Time.deltaTime);
-            //CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
-            //rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed); 
-        }
+        }*/
     }
 
     void Pathfinding()
