@@ -76,6 +76,7 @@ public class AIMovement : MonoBehaviour {
     {
         get
         {
+            
             return Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
         }
     }
@@ -83,39 +84,44 @@ public class AIMovement : MonoBehaviour {
     void Turn()
     {
         Vector3 rotationsdirections = new Vector3(1,1,1);
-
+        Debug.Log(CurrentSpeed);
 
         for (int i = 0; i < 3; ++i)
         {
-            //Player.localRotation *= Quaternion.AngleAxis(Player.transform.position[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
+            //Player.localRotation *= Quaternion.AngleAxis(rotationsdirections[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
         }
+
+
+       // Player.localPosition += Player.forward * CurrentSpeed * Time.deltaTime;
 
 
         Vector3 pos = nodes[currentNode].position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+
+      
+
         float angle = Vector3.Angle(Player.position, pos);
         float sinAngle = Mathf.Sign(angle);
 
-        //Player.localRotation = Quaternion.Slerp(Player.localRotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
-        //Player.localRotation = Quaternion.Slerp(rotation, m_InitialRotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+        }
+        else
+        {
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+        }
+
+        
+        //Player.localRotation = Quaternion.Slerp(rotation, m_InitialRotation * Quaternion.AngleAxis(-rotation.y* MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 
     void Move()
     {
 
-        //float CurrentSpeed;
-        //float SpeedFactor;
-
         transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
-        /*
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode) {
-            //transform.position += transform.forward * movementSpeed / 2 * Time.deltaTime;
-            //SpeedFactor = AccelerationCurve.Evaluate(1 * Time.deltaTime);
-            //CurrentSpeed = Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);
-            
-            //rigidBody.AddRelativeForce(Vector3.forward * CurrentSpeed);
-        }*/
+
     }
 
     void Pathfinding()
