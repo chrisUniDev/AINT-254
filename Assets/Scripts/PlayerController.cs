@@ -89,9 +89,10 @@ public class PlayerController : MonoBehaviour {
 
     private void Update ()
     {
+        ShipAudio();
         UpdateInput();
         UpdateOrientationAndPos();
-        ShipAudio();
+        
 
 
     }
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour {
     private void ShipAudio()
     {
 
-        if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == false && m_audioSource.isPlaying == false)
+        if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f  && m_audioSource.isPlaying == false)
         {
             m_audioSource.PlayOneShot(m_audioStarUp);
             slowdownsound = false;

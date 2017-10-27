@@ -9,10 +9,17 @@ public class shipCheckPoint : MonoBehaviour {
     private GameObject checkpoints;
     //public Transform[] checkPointArray;
 	public int currentCheckPoint = 0;
-	public int currentLap = 0;
+    private int m_cashedCheckpoint;
+    private int m_cashedLap;
+    public int currentLap = 0;
 	public Vector3 startPos;
 
 	public float DistanceToNextCheckPoint;
+
+    [SerializeField] private AudioClip m_checkpointAudio;
+    [SerializeField] private AudioClip m_lapAudio;
+
+    private AudioSource audioSource;
 
 	public int racePosition;
 
@@ -22,6 +29,7 @@ public class shipCheckPoint : MonoBehaviour {
     // Use this for initialization
     void Start () 
 	{
+        audioSource = GetComponent<AudioSource>();
         checkpoints = GameObject.FindGameObjectWithTag("checkpoints");
         startPos = transform.position;
         Transform[] nodes = checkpoints.GetComponentsInChildren<Transform>();
@@ -55,6 +63,26 @@ public class shipCheckPoint : MonoBehaviour {
         get
         {
             return currentLap;
+        }
+    }
+
+    private void Update()
+    {
+        if (m_cashedCheckpoint != currentCheckPoint && m_cashedLap == currentLap)
+        {
+            m_cashedCheckpoint = currentCheckPoint;
+            audioSource.PlayOneShot(m_checkpointAudio);
+            
+        }
+
+        if (m_cashedLap != currentLap)
+        {
+            m_cashedLap = currentLap;
+            if (currentLap != 1)
+            {
+                audioSource.PlayOneShot(m_lapAudio);
+            }
+            
         }
     }
 

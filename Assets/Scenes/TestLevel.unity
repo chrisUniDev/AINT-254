@@ -6365,6 +6365,8 @@ MonoBehaviour:
   currentLap: 0
   startPos: {x: 0, y: 0, z: 0}
   DistanceToNextCheckPoint: 0
+  m_checkpointAudio: {fileID: 0}
+  m_lapAudio: {fileID: 0}
   racePosition: 0
   checkpointNodes: []
 --- !u!54 &1059846636
@@ -7771,6 +7773,7 @@ GameObject:
   - component: {fileID: 1436899726}
   - component: {fileID: 1436899725}
   - component: {fileID: 1436899730}
+  - component: {fileID: 1436899731}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7879,6 +7882,87 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5fe8ad6d9bd6a77498ff25a2251de8b7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &1436899731
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436899723}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243550683371881270, guid: 3e95e463eaa4e7348a82cb640061ff1b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: b63a204d065a6414cb201917ca35de06, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9134,6 +9218,8 @@ MonoBehaviour:
   currentLap: 0
   startPos: {x: 0, y: 0, z: 0}
   DistanceToNextCheckPoint: 0
+  m_checkpointAudio: {fileID: 0}
+  m_lapAudio: {fileID: 0}
   racePosition: 0
   checkpointNodes: []
 --- !u!54 &1742222316
@@ -9999,6 +10085,7 @@ GameObject:
   - component: {fileID: 2118677260}
   - component: {fileID: 2118677261}
   - component: {fileID: 2118677262}
+  - component: {fileID: 2118677263}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: ShipMesh
@@ -10048,6 +10135,8 @@ MonoBehaviour:
   currentLap: 0
   startPos: {x: 0, y: 0, z: 0}
   DistanceToNextCheckPoint: 0
+  m_checkpointAudio: {fileID: 8300000, guid: fd916900c7518db4b8e5c1e0bf95bd74, type: 3}
+  m_lapAudio: {fileID: 8300000, guid: 20ebbe3b18591924085755b3b2ab4a0c, type: 3}
   racePosition: 0
   checkpointNodes: []
 --- !u!65 &2118677260
@@ -10089,6 +10178,87 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &2118677263
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118677256}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243550683371881270, guid: 3e95e463eaa4e7348a82cb640061ff1b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: fd916900c7518db4b8e5c1e0bf95bd74, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &2136842283
 Prefab:
   m_ObjectHideFlags: 0
