@@ -50,6 +50,14 @@ public class shipCheckPoint : MonoBehaviour {
         }
 	}
 
+    public int GetLap
+    {
+        get
+        {
+            return currentLap;
+        }
+    }
+
 
 
 }

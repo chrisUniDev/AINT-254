@@ -9,6 +9,14 @@ public class PlayerController : MonoBehaviour {
     public Transform Player; //The transfrom mesh of the player
     public Vector4 Response; //how fast the input is interpolated
 
+    [SerializeField] private AudioClip m_audioStarUp;
+    [SerializeField] private AudioClip m_audioMain;
+    [SerializeField] private AudioClip m_audioSlow;
+    [SerializeField] private AudioClip m_audioIdol;
+
+    private AudioSource m_audioSource;
+
+
     private float CameraDistanceSmooth = 0.85f;
     public Transform m_transform { get; private set; }
 
@@ -70,7 +78,7 @@ public class PlayerController : MonoBehaviour {
         m_InitialRotation = Player.localRotation;
         m_CameraFOV = TargetCam.fieldOfView;
         m_lookAtPointOffset = OnIdle;
-
+        m_audioSource = GetComponent<AudioSource>();
         m_cameraTransform.position = m_transform.position + CameraOffsetVector;
     }
 
@@ -83,7 +91,47 @@ public class PlayerController : MonoBehaviour {
     {
         UpdateInput();
         UpdateOrientationAndPos();
-	}
+        ShipAudio();
+
+
+    }
+
+    bool isMain = false;
+
+    private void ShipAudio()
+    {
+
+        if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == false && m_audioSource.isPlaying == false)
+        {
+            m_audioSource.PlayOneShot(m_audioStarUp);
+            
+        }
+        else if (Input.GetAxis(ContThrottle) == 1 && m_audioSource.isPlaying == false)
+        {
+            m_audioSource.clip = m_audioMain;
+            m_audioSource.Play();
+            isMain = true;
+          
+        }
+        else if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == true)
+        {
+            m_audioSource.Stop();
+            m_audioSource.clip = m_audioSlow;
+            m_audioSource.Play();
+            isMain = false;
+            
+        }
+        else if (Input.GetAxis(ContThrottleReduct) > 0 && m_audioSource.isPlaying == false)
+        {
+            m_audioSource.Stop();
+            m_audioSource.clip = m_audioSlow;
+            m_audioSource.Play();
+        }
+
+
+   
+
+    }
 
     public Vector3 CameraOffsetVector
     {
