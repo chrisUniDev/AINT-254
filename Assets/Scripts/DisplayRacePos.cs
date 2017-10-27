@@ -18,6 +18,23 @@ public class DisplayRacePos : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         m_racePos = FindRacePos.GetRacePos;
-        m_displayPos.text = m_racePos.ToString();
-	}
+
+        if (m_racePos == 1)
+        {
+            m_displayPos.text = m_racePos.ToString() + "st";
+        }
+        else if (m_racePos ==  2)
+        {
+            m_displayPos.text = m_racePos.ToString() + "nd";
+        }
+        else if (m_racePos == 3)
+        {
+            m_displayPos.text = m_racePos.ToString() + "rd";
+        }
+        else if (m_racePos  > 3)
+        {
+            m_displayPos.text = m_racePos.ToString() + "th";
+        }
+
+    }
 }

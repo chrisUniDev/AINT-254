@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: e5b11fea396c4c146a740fb2febbff4e
+timeCreated: 1509052005
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: detail_fenderSquare_34
+    100002: detail_roofRails%_33
+    100004: engine_intake_5
+    100006: engine_large_0
+    100008: engine_plane_17
+    100010: engine_plane_18
+    100012: engine_rocket%_3
+    100014: engine_side_1
+    100016: engine_side_2
+    100018: gear_strut%_30
+    100020: glass_high_25
+    100022: glass_ufo%_16
+    100024: plane_rudder_22
+    100026: //RootNode
+    100028: wing_endLong_21
+    100030: wing_endLong_32
+    400000: detail_fenderSquare_34
+    400002: detail_roofRails%_33
+    400004: engine_intake_5
+    400006: engine_large_0
+    400008: engine_plane_17
+    400010: engine_plane_18
+    400012: engine_rocket%_3
+    400014: engine_side_1
+    400016: engine_side_2
+    400018: gear_strut%_30
+    400020: glass_high_25
+    400022: glass_ufo%_16
+    400024: plane_rudder_22
+    400026: //RootNode
+    400028: wing_endLong_21
+    400030: wing_endLong_32
+    2300000: detail_fenderSquare_34
+    2300002: detail_roofRails%_33
+    2300004: engine_intake_5
+    2300006: engine_large_0
+    2300008: engine_plane_17
+    2300010: engine_plane_18
+    2300012: engine_rocket%_3
+    2300014: engine_side_1
+    2300016: engine_side_2
+    2300018: gear_strut%_30
+    2300020: glass_high_25
+    2300022: glass_ufo%_16
+    2300024: plane_rudder_22
+    2300026: wing_endLong_21
+    2300028: wing_endLong_32
+    3300000: detail_fenderSquare_34
+    3300002: detail_roofRails%_33
+    3300004: engine_intake_5
+    3300006: engine_large_0
+    3300008: engine_plane_17
+    3300010: engine_plane_18
+    3300012: engine_rocket%_3
+    3300014: engine_side_1
+    3300016: engine_side_2
+    3300018: gear_strut%_30
+    3300020: glass_high_25
+    3300022: glass_ufo%_16
+    3300024: plane_rudder_22
+    3300026: wing_endLong_21
+    3300028: wing_endLong_32
+    4300000: engine_large_0
+    4300002: engine_side_1
+    4300004: engine_side_2
+    4300006: engine_rocket%_3
+    4300008: engine_intake_5
+    4300010: glass_ufo%_16
+    4300012: engine_plane_17
+    4300014: engine_plane_18
+    4300016: wing_endLong_21
+    4300018: plane_rudder_22
+    4300020: glass_high_25
+    4300022: gear_strut%_30
+    4300024: wing_endLong_32
+    4300026: detail_roofRails%_33
+    4300028: detail_fenderSquare_34
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

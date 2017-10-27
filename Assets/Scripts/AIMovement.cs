@@ -31,6 +31,9 @@ public class AIMovement : MonoBehaviour {
 
     private Quaternion m_InitialRotation;
 
+    Vector3 acceleration;
+    Vector3 velocity;
+
     float detectionDistance = 20f;
     float frontDetectionDistance = 180f;
     float rayCastOffset = 5f;
@@ -59,7 +62,24 @@ public class AIMovement : MonoBehaviour {
         Pathfinding();
         Move();
         CheckWayPointDistance();
-        
+
+        Vector3 forces = MoveTowardsNode(nodes[currentNode].position);
+
+        acceleration = forces;
+
+        velocity += 2 * acceleration * Time.deltaTime;
+
+        if (velocity.magnitude > SpeedRange.y)
+        {
+            velocity = velocity.normalized * SpeedRange.y;
+        }
+
+        rigidBody.velocity = velocity;
+
+        Quaternion desiredRotation = Quaternion.LookRotation(velocity);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * 3);
+
     }
 
     public float SpeedFactor
@@ -81,37 +101,52 @@ public class AIMovement : MonoBehaviour {
         }
     }
 
-    void Turn()
+    Vector3 MoveTowardsNode(Vector3 target)
     {
-        Vector3 rotationsdirections = new Vector3(1,1,1);
-        Debug.Log(CurrentSpeed);
+        Vector3 distance = target - transform.position;
 
-        for (int i = 0; i < 3; ++i)
+        if (distance.magnitude < 25)
         {
-            //Player.localRotation *= Quaternion.AngleAxis(rotationsdirections[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
-        }
-
-
-       // Player.localPosition += Player.forward * CurrentSpeed * Time.deltaTime;
-
-
-        Vector3 pos = nodes[currentNode].position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(pos);
-
-      
-
-        float angle = Vector3.Angle(Player.position, pos);
-        float sinAngle = Mathf.Sign(angle);
-
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+            return distance.normalized * -SpeedRange.y;
         }
         else
         {
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+            return distance.normalized * SpeedRange.y;
         }
+    }
+
+
+    void Turn()
+    {
+       // Vector3 rotationsdirections = new Vector3(1,1,1);
+       // Debug.Log(CurrentSpeed);
+
+       // for (int i = 0; i < 3; ++i)
+       // {
+       //     //Player.localRotation *= Quaternion.AngleAxis(rotationsdirections[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
+       // }
+
+
+       //// Player.localPosition += Player.forward * CurrentSpeed * Time.deltaTime;
+
+
+       // Vector3 pos = nodes[currentNode].position - transform.position;
+       // Quaternion rotation = Quaternion.LookRotation(pos);
+
+      
+
+       // float angle = Vector3.Angle(Player.position, pos);
+       // float sinAngle = Mathf.Sign(angle);
+
+       // if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50)
+       // {
+       //     transform.rotation = Quaternion.Slerp(transform.rotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+       // }
+       // else
+       // {
+
+       //     transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
+       // }
 
         
         //Player.localRotation = Quaternion.Slerp(rotation, m_InitialRotation * Quaternion.AngleAxis(-rotation.y* MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
@@ -120,7 +155,7 @@ public class AIMovement : MonoBehaviour {
     void Move()
     {
 
-        transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+        //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
 
     }
 
