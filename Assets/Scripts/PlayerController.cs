@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     bool isMain = false;
+    bool slowdownsound = false;
 
     private void ShipAudio()
     {
@@ -104,14 +105,18 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == false && m_audioSource.isPlaying == false)
         {
             m_audioSource.PlayOneShot(m_audioStarUp);
-            
+            slowdownsound = false;
+
         }
-        else if (Input.GetAxis(ContThrottle) == 1 && m_audioSource.isPlaying == false)
+        else if (Input.GetAxis(ContThrottle) >= 0.5f && m_audioSource.isPlaying == false)
         {
+            m_audioSource.Stop();
             m_audioSource.clip = m_audioMain;
             m_audioSource.Play();
             isMain = true;
-          
+            slowdownsound = false;
+
+
         }
         else if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == true)
         {
@@ -119,13 +124,17 @@ public class PlayerController : MonoBehaviour {
             m_audioSource.clip = m_audioSlow;
             m_audioSource.Play();
             isMain = false;
-            
+            slowdownsound = true;
+
+
         }
-        else if (Input.GetAxis(ContThrottleReduct) > 0 && m_audioSource.isPlaying == false)
+        else if (Input.GetAxis(ContThrottleReduct) > 0 && CurrentSpeed < 10)
         {
             m_audioSource.Stop();
             m_audioSource.clip = m_audioSlow;
             m_audioSource.Play();
+            slowdownsound = true;
+            isMain = false;
         }
 
 

@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ce4f2c31f85ed4a89618e87475f6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scaleRange: {x: -1, y: -1000}
+  m_scaleRange: {x: -1, y: -500}
   m_posSmooth: 50
   m_rotSmooth: 50
   m_target: {fileID: 1531265925}
@@ -1116,7 +1116,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -990535
+  randomSeed: -634766235
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1500,7 +1500,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100000
+    maxNumParticles: 50000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -6504,34 +6504,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076595001}
   m_Mesh: {fileID: 4300020, guid: e5b11fea396c4c146a740fb2febbff4e, type: 3}
---- !u!1 &1119689668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1119689669}
-  m_Layer: 0
-  m_Name: shipMain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1119689669
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119689668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1531265926}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132499495
 GameObject:
   m_ObjectHideFlags: 0
@@ -8368,7 +8340,6 @@ Transform:
   - {fileID: 1436899729}
   - {fileID: 2118677257}
   - {fileID: 311967494}
-  - {fileID: 1119689669}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 137.093, z: 0}
