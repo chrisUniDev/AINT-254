@@ -68,13 +68,6 @@ public class shipCheckPoint : MonoBehaviour {
 
     private void Update()
     {
-        if (m_cashedCheckpoint != currentCheckPoint && m_cashedLap == currentLap)
-        {
-            m_cashedCheckpoint = currentCheckPoint;
-            audioSource.PlayOneShot(m_checkpointAudio);
-            
-        }
-
         if (m_cashedLap != currentLap)
         {
             m_cashedLap = currentLap;
@@ -82,8 +75,17 @@ public class shipCheckPoint : MonoBehaviour {
             {
                 audioSource.PlayOneShot(m_lapAudio);
             }
+
+        }
+
+        if (m_cashedCheckpoint != currentCheckPoint && m_cashedLap == currentLap && currentCheckPoint != 1 && currentCheckPoint != checkpointNodes.Count && currentCheckPoint != 0)
+        {
+            m_cashedCheckpoint = currentCheckPoint;
+            audioSource.PlayOneShot(m_checkpointAudio);
             
         }
+
+     
     }
 
 

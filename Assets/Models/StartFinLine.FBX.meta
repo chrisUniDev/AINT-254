@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 81d6b951c46017b4295489e8f259a8a0
+timeCreated: 1509396184
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ChamferCyl001
+    100002: OilTank001
+    100004: roof_window_13
+    100006: roof_window_14
+    100008: roof_window_15
+    100010: roof_window_16
+    100012: roof_window_17
+    100014: roof_window_18
+    100016: roof_window_19
+    100018: roof_window_20
+    100020: roof_window_21
+    100022: roof_window_7
+    100024: roof_window_8
+    100026: roof_window_9
+    100028: //RootNode
+    400000: ChamferCyl001
+    400002: OilTank001
+    400004: roof_window_13
+    400006: roof_window_14
+    400008: roof_window_15
+    400010: roof_window_16
+    400012: roof_window_17
+    400014: roof_window_18
+    400016: roof_window_19
+    400018: roof_window_20
+    400020: roof_window_21
+    400022: roof_window_7
+    400024: roof_window_8
+    400026: roof_window_9
+    400028: //RootNode
+    2300000: ChamferCyl001
+    2300002: OilTank001
+    2300004: roof_window_13
+    2300006: roof_window_14
+    2300008: roof_window_15
+    2300010: roof_window_16
+    2300012: roof_window_17
+    2300014: roof_window_18
+    2300016: roof_window_19
+    2300018: roof_window_20
+    2300020: roof_window_21
+    2300022: roof_window_7
+    2300024: roof_window_8
+    2300026: roof_window_9
+    3300000: ChamferCyl001
+    3300002: OilTank001
+    3300004: roof_window_13
+    3300006: roof_window_14
+    3300008: roof_window_15
+    3300010: roof_window_16
+    3300012: roof_window_17
+    3300014: roof_window_18
+    3300016: roof_window_19
+    3300018: roof_window_20
+    3300020: roof_window_21
+    3300022: roof_window_7
+    3300024: roof_window_8
+    3300026: roof_window_9
+    4300000: OilTank001
+    4300002: roof_window_21
+    4300004: roof_window_20
+    4300006: roof_window_19
+    4300008: roof_window_18
+    4300010: roof_window_17
+    4300012: roof_window_16
+    4300014: roof_window_15
+    4300016: roof_window_14
+    4300018: roof_window_13
+    4300020: roof_window_9
+    4300022: roof_window_8
+    4300024: roof_window_7
+    4300026: ChamferCyl001
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
