@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
     private Vector2 OnIdle = new Vector2(0.0f, 10.0f); //Offset of the look-at point (relative to the spaceship) when flying straight with a minimum speed
     private Vector2 Smooth = new Vector2(30.0f, 30.0f); //How fast the look-at point interpolates to the desired value. Higher = faster.
-    private Vector2 OnMaxSpeed = new Vector2(20.0f, -20.0f); //Offset of the look-at point (relative to the spaceship) when flying or turning with a maximum speed
+    private Vector2 OnMaxSpeed = new Vector2(50.0f, -50.0f); //Offset of the look-at point (relative to the spaceship) when flying or turning with a maximum speed
     private Vector2 OnTurn = new Vector2(30.0f, -30.0f); //Offset of the look-at point (relative to the spaceship) when turning with a minimum speed
 
     private float m_CameraDistance; //the idle camera distance
