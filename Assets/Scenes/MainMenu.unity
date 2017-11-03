@@ -14457,7 +14457,6 @@ GameObject:
   - component: {fileID: 1373289467}
   - component: {fileID: 1373289466}
   - component: {fileID: 1373289465}
-  - component: {fileID: 1373289464}
   m_Layer: 5
   m_Name: CircleThing
   m_TagString: Untagged
@@ -14495,17 +14494,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0000047684, y: -0.000013351}
   m_SizeDelta: {x: 884, y: 883}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1373289464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373289462}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4ac17c452f1cd4c84775475f086fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1373289465
 MonoBehaviour:
   m_ObjectHideFlags: 0
