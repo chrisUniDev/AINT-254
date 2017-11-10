@@ -35,7 +35,7 @@ public class gameOver : MonoBehaviour {
 	IEnumerator FadeToGame () {
 		float fadeTime = GameObject.Find ("_Managers").GetComponent<Fading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		SceneManager.LoadScene("figureOfEight");
+		SceneManager.LoadScene("RaceTrack1");
 	}
 
 }

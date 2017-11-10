@@ -4,38 +4,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EndRace : MonoBehaviour {
+public class EndRace : MonoBehaviour
+{
 
 
-	public CheckPoint checkpointSystem;
-	WayPointRingHud maxLap;
+    public CheckPoint checkpointSystem;
+
+    int lap;
+    public int maxiumLap;
 
 
 
-	int lap;
-	int maxiumLap;
+    // Update is called once per frame
+    void Update()
+    {
+        lap = checkpointSystem.getLap;
 
-	void Start(){
-		maxLap = GetComponent<WayPointRingHud> ();
-
-		//maxiumLap = maxLap.MaxiumLaps;
-	}
-
-	// Update is called once per frame
-	void Update () {
-		lap = checkpointSystem.getLap;
-
-		if (lap == maxiumLap + 1) {
-			StartCoroutine (FadeToExitGameScreen ());
-		}
-	}
+        if (lap == maxiumLap + 1)
+        {
+            StartCoroutine(FadeToExitGameScreen());
+        }
+    }
 
 
-	IEnumerator FadeToExitGameScreen () {
-		float fadeTime = GameObject.Find ("_Managers").GetComponent<Fading> ().BeginFade (1);
-		yield return new WaitForSeconds (fadeTime);
-		SceneManager.LoadScene("GameOver");
-	}
+    IEnumerator FadeToExitGameScreen()
+    {
+        float fadeTime = GameObject.Find("_Managers").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene("GameOver");
+    }
 
 
 

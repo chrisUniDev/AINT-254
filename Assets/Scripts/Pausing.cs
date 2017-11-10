@@ -12,17 +12,17 @@ public class Pausing : MonoBehaviour {
 
 	public GameObject resumeBtn;
 
-	public GameObject playerShip;
-	public GameObject AI1;
-	public GameObject AI2;
-	public GameObject AI3;
-	public GameObject AI4;
-	public GameObject AI5;
-	public GameObject AI6;
+    private GameObject[] ships;
+
+
+
+
 
 	// Use this for initialization
 	void Start () {
-		
+
+
+        ships = GameObject.FindGameObjectsWithTag("Ship");
 	}
 	
 	// Update is called once per frame
@@ -30,6 +30,10 @@ public class Pausing : MonoBehaviour {
 
 		if (Input.GetKeyDown ("joystick button 7")) {
 			Paused ();
+            for (int i = 0; i < ships.Length; i++)
+            {
+                ships[i].SetActive(false);
+            }
 		}
 	}
 
@@ -40,13 +44,7 @@ public class Pausing : MonoBehaviour {
 		HUD.SetActive (false);
 		arrow.SetActive (false);
 
-		playerShip.SetActive (false);
-		AI1.SetActive (false);
-		AI2.SetActive (false);
-		AI3.SetActive (false);
-		AI4.SetActive (false);
-		AI5.SetActive (false);
-		AI6.SetActive (false);
+
 
 		pauseCanvas.SetActive (true);
 		EventSystem.current.SetSelectedGameObject(resumeBtn);
@@ -58,15 +56,13 @@ public class Pausing : MonoBehaviour {
 		HUD.SetActive (true);
 		arrow.SetActive (true);
 
-		playerShip.SetActive (true);
-		AI1.SetActive (true);
-		AI2.SetActive (true);
-		AI3.SetActive (true);
-		AI4.SetActive (true);
-		AI5.SetActive (true);
-		AI6.SetActive (true);
+        for (int i = 0; i < ships.Length; i++)
+        {
+            ships[i].SetActive(true);
+        }
 
-		pauseCanvas.SetActive (false);
+
+        pauseCanvas.SetActive (false);
 	}
 
 	public void QuitGame () {
@@ -86,7 +82,7 @@ public class Pausing : MonoBehaviour {
 	IEnumerator FadeToRestart () {
 		float fadeTime = GameObject.Find ("_Managers").GetComponent<Fading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		SceneManager.LoadScene("figureOfEight");
+		SceneManager.LoadScene("RaceTrack1");
 	}
 
 }
