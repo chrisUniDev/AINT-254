@@ -3,19 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public Camera TargetCam; //Players Camera
     public Transform Player; //The transfrom mesh of the player
     public Vector4 Response; //how fast the input is interpolated
 
-    [SerializeField] private AudioClip m_audioStarUp;
-    [SerializeField] private AudioClip m_audioMain;
-    [SerializeField] private AudioClip m_audioSlow;
-    [SerializeField] private AudioClip m_audioIdol;
-
+    [SerializeField]
     private AudioSource m_audioSource;
-
 
     private float CameraDistanceSmooth = 0.85f;
     public Transform m_transform { get; private set; }
@@ -43,8 +39,8 @@ public class PlayerController : MonoBehaviour {
 
     private Transform m_cameraTransform; //cached cameras transform
 
-    private Vector2 m_lookAtPointOffset; 
-    
+    private Vector2 m_lookAtPointOffset;
+
     private Vector4 SmoothedInput;
 
     //SpaceShip settings
@@ -56,7 +52,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 Maneuverability = new Vector3(75.0f, 75.0f, -50.0f); // how fast you turn
     [SerializeField]
     private float MaxBankAngleOnTurn = 45.0f; //maxium tilt when turning
-    
+
     public Vector2 SpeedRange = new Vector2(100.0f, 800.0f); //min and max speed
     [SerializeField]
     private float m_controllerSensitivity; //Controller sensitivity when flying with a minimum speed
@@ -69,7 +65,7 @@ public class PlayerController : MonoBehaviour {
     public string ContThrottle; //Speed control (speed increase)
     public string ContThrottleReduct; //Speed control (speed reduction)
 
-    void Start ()
+    void Start()
     {
         SmoothedInput = Vector4.zero;
         m_transform = transform;
@@ -78,7 +74,7 @@ public class PlayerController : MonoBehaviour {
         m_InitialRotation = Player.localRotation;
         m_CameraFOV = TargetCam.fieldOfView;
         m_lookAtPointOffset = OnIdle;
-        m_audioSource = GetComponent<AudioSource>();
+
         m_cameraTransform.position = m_transform.position + CameraOffsetVector;
     }
 
@@ -87,12 +83,12 @@ public class PlayerController : MonoBehaviour {
         UpdateCamera();
     }
 
-    private void Update ()
+    private void Update()
     {
         ShipAudio();
         UpdateInput();
         UpdateOrientationAndPos();
-        
+
 
 
     }
@@ -103,43 +99,7 @@ public class PlayerController : MonoBehaviour {
     private void ShipAudio()
     {
 
-        if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f  && m_audioSource.isPlaying == false)
-        {
-            m_audioSource.PlayOneShot(m_audioStarUp);
-            slowdownsound = false;
-
-        }
-        else if (Input.GetAxis(ContThrottle) >= 0.5f && m_audioSource.isPlaying == false)
-        {
-            m_audioSource.Stop();
-            m_audioSource.clip = m_audioMain;
-            m_audioSource.Play();
-            isMain = true;
-            slowdownsound = false;
-
-
-        }
-        else if (Input.GetAxis(ContThrottle) > 0 && Input.GetAxis(ContThrottle) < 0.5f && isMain == true)
-        {
-            m_audioSource.Stop();
-            m_audioSource.clip = m_audioSlow;
-            m_audioSource.Play();
-            isMain = false;
-            slowdownsound = true;
-
-
-        }
-        else if (Input.GetAxis(ContThrottleReduct) > 0 && CurrentSpeed < 10)
-        {
-            m_audioSource.Stop();
-            m_audioSource.clip = m_audioSlow;
-            m_audioSource.Play();
-            slowdownsound = true;
-            isMain = false;
-        }
-
-
-   
+        m_audioSource.pitch = CurrentSpeed / 100.0f;
 
     }
 
@@ -155,9 +115,9 @@ public class PlayerController : MonoBehaviour {
     {
         get
         {
-            
+
             return m_spaceshipAccelerationCurve.Evaluate(SmoothedInput.w);
-            
+
         }
     }
 
@@ -198,7 +158,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void UpdateInput()
-    { 
+    {
         float currentControllerSensitivity = Mathf.Lerp(m_controllerSensitivity, m_controllerSensitivityOnMaxSpeed, SpeedFactor);
 
         float currentSpinSpeed = Mathf.Lerp(m_controllerSensitivity, 5.0f, SpeedFactor);

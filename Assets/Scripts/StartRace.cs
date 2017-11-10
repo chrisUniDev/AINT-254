@@ -12,6 +12,8 @@ public class StartRace : MonoBehaviour
     AIMovement AIMove;
     PlayerController playerMove;
 
+    bool done = false;
+
     Vector2 tempSpeed;
 
     // Use this for initialization
@@ -32,6 +34,7 @@ public class StartRace : MonoBehaviour
                 tempSpeed = playerMove.SpeedRange;
 
                 playerMove.SpeedRange = new Vector2(0f,0f);
+                
             }
 
 
@@ -44,8 +47,9 @@ public class StartRace : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!rend.enabled)
+        if (!rend.enabled && done == false)
         {
+            done = true;
             for (int i = 0; i < ships.Length; i++)
             {
                 if (ships[i].name != "ShipMeshPlayer")

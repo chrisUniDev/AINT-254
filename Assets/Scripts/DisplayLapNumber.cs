@@ -26,11 +26,11 @@ public class DisplayLapNumber : MonoBehaviour {
 
         if (m_lapnum == 0)
         {
-            m_displayLap.text = "Lap: 1";
+            m_displayLap.text = "Lap: 1 / 3";
         }
         else
         {
-            m_displayLap.text = "Lap: " + m_lapnum;
+            m_displayLap.text = "Lap: " + m_lapnum + " / 3";
         }
       
 	}
