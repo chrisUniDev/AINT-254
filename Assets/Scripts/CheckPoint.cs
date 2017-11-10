@@ -13,8 +13,8 @@ public class CheckPoint : MonoBehaviour {
 
 	shipCheckPoint[] ShipCheckpoints;
 
-	public GameObject currentCheckpointUI;
-	public GameObject nextCheckpointUI;
+	//public GameObject currentCheckpointUI;
+	//public GameObject nextCheckpointUI;
 
 	public bool firstUIOnMarker;
 
@@ -61,7 +61,7 @@ public class CheckPoint : MonoBehaviour {
 		}
 
 		if (firstUIOnMarker) {
-			currentCheckpointUI.SetActive (true);
+			//currentCheckpointUI.SetActive (true);
 			firstUIOnMarker = false;
 		}
 	}
@@ -107,12 +107,12 @@ public class CheckPoint : MonoBehaviour {
 					}
 
 					if (Ships[i].name == "Player") {
-						currentCheckpointUI.SetActive (false);
-						nextCheckpointUI.SetActive (true);
+						//currentCheckpointUI.SetActive (false);
+						//nextCheckpointUI.SetActive (true);
 					}
 
 					if (disableUI == true) {
-						currentCheckpointUI.SetActive (false);
+						//currentCheckpointUI.SetActive (false);
 					}
 				}
 			}
