@@ -18,7 +18,7 @@ public class EndRace : MonoBehaviour {
 	void Start(){
 		maxLap = GetComponent<WayPointRingHud> ();
 
-		maxiumLap = maxLap.MaxiumLaps;
+		//maxiumLap = maxLap.MaxiumLaps;
 	}
 
 	// Update is called once per frame
