@@ -147,6 +147,30 @@ ModelImporter:
     4300050: wall_borderCornerDiagonal_37
     4300052: wall_borderCornerDiagonal_38
     4300054: wall_borderCornerDiagonal_39
+    6400000: structure_pole_24
+    6400002: structure_pole_25
+    6400004: wall_borderBricks_19
+    6400006: wall_borderBricks_20
+    6400008: wall_borderBricks_22
+    6400010: wall_borderBricks_23
+    6400012: wall_borderCornerDiagonal_36
+    6400014: wall_borderCornerDiagonal_37
+    6400016: wall_borderCornerDiagonal_38
+    6400018: wall_borderCornerDiagonal_39
+    6400020: wall_borderCornerDiagonal_4
+    6400022: wall_borderCornerDiagonal_5
+    6400024: wall_borderCornerDiagonal_6
+    6400026: wall_borderCornerDiagonal_7
+    6400028: wall_borderGallery%_15
+    6400030: wall_borderGallery%_17
+    6400032: wall_borderGallery%_27
+    6400034: wall_borderGallery%_28
+    6400036: wall_borderGallery%_30
+    6400038: wall_borderGallery%_31
+    6400040: wall_cornerDiagonal_0
+    6400042: wall_cornerDiagonal_1
+    6400044: wall_cornerDiagonal_2
+    6400046: wall_cornerDiagonal_3
   materials:
     importMaterials: 1
     materialName: 0
@@ -176,7 +200,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
