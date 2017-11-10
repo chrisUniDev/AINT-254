@@ -30,7 +30,7 @@ public class BoostPowerUp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider col) {
-		Debug.Log (controller.SpeedRange);
+		//Debug.Log (controller.SpeedRange);
 		StartCoroutine (Boost ());
 	}
 

@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float MaxBankAngleOnTurn = 45.0f; //maxium tilt when turning
     
-    public Vector2 SpeedRange = new Vector2(30.0f, 600.0f); //min and max speed
+    public Vector2 SpeedRange = new Vector2(100.0f, 800.0f); //min and max speed
     [SerializeField]
     private float m_controllerSensitivity; //Controller sensitivity when flying with a minimum speed
     [SerializeField]

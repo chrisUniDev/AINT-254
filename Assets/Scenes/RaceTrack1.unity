@@ -1871,7 +1871,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -888423072
+  randomSeed: -1968980714
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14712,6 +14712,7 @@ GameObject:
   - component: {fileID: 1669888633}
   - component: {fileID: 1669888635}
   - component: {fileID: 1669888634}
+  - component: {fileID: 1669888636}
   m_Layer: 0
   m_Name: checkpointRing
   m_TagString: Untagged
@@ -14760,6 +14761,18 @@ MonoBehaviour:
   firstUIOnMarker: 0
   PlayersRacePos: 0
   getLap: 0
+--- !u!114 &1669888636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669888632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df29185c732c334da8757274d3bb168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2118677256}
 --- !u!1 &1675029303
 GameObject:
   m_ObjectHideFlags: 0
