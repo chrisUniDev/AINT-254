@@ -14,6 +14,8 @@ public class shipCheckPoint : MonoBehaviour {
     public int currentLap = 0;
 	public Vector3 startPos;
 
+    private int maxDistanceBeforeRespawn = 8000;
+
 	public float DistanceToNextCheckPoint;
 
     [SerializeField] private AudioClip m_checkpointAudio;
@@ -25,6 +27,8 @@ public class shipCheckPoint : MonoBehaviour {
 
     public List<Transform> checkpointNodes = new List<Transform>();
 
+    private GameObject[] tempRespawn;
+    private GameObject[] Respawnpoints;
 
     // Use this for initialization
     void Start () 
@@ -43,11 +47,28 @@ public class shipCheckPoint : MonoBehaviour {
                 checkpointNodes.Add(childNodes[1]);
             }
         }
+
+        tempRespawn = GameObject.FindGameObjectsWithTag("RespawnPoint");
+
+        Respawnpoints = new GameObject[tempRespawn.Length];
+
+        for (int i = 0; i < tempRespawn.Length; i++)
+        {
+
+            Respawnpoints[i] = tempRespawn[tempRespawn.Length -1 - i];
+        }
+
+
 	}
 
 	void FixedUpdate(){
 		DistanceToNextCheckPoint = Vector3.Distance (transform.position, checkpointNodes[currentCheckPoint].transform.position);
-	}
+
+        
+
+        TraveledToFar();
+
+    }
 
 	public int GetRacePos{
 		set{ racePosition = value;
@@ -86,6 +107,17 @@ public class shipCheckPoint : MonoBehaviour {
         }
 
      
+    }
+
+    //If the player flys too far away from the checkpoint
+    void TraveledToFar()
+    {
+        if (DistanceToNextCheckPoint > maxDistanceBeforeRespawn)
+        {
+            this.transform.position = Respawnpoints[currentCheckPoint - 1].transform.position;
+            this.transform.rotation = Respawnpoints[currentCheckPoint - 1].transform.rotation;
+
+        }
     }
 
 
