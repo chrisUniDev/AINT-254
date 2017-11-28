@@ -713,6 +713,7 @@ MonoBehaviour:
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
+  torque: 5
 --- !u!114 &71112736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +742,7 @@ Rigidbody:
   m_GameObject: {fileID: 71112732}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -19151,6 +19152,7 @@ MonoBehaviour:
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
+  torque: 5
 --- !u!114 &1901662889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19179,7 +19181,7 @@ Rigidbody:
   m_GameObject: {fileID: 1901662885}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -20464,6 +20466,7 @@ MonoBehaviour:
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
+  torque: 5
 --- !u!114 &2049074092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20492,7 +20495,7 @@ Rigidbody:
   m_GameObject: {fileID: 2049074088}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -20973,11 +20976,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118677256}
   serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 10
-  m_AngularDrag: 0.05
+  m_Mass: 1
+  m_Drag: 3
+  m_AngularDrag: 0.5
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -21082,6 +21085,7 @@ MonoBehaviour:
   m_cameraPosSmooth: 0.1
   m_cameraRotationSmooth: 0.4
   m_camreaOnRollCompensationFactor: 0.1
+  torque: 5
   m_spaceshipAccelerationCurve:
     serializedVersion: 2
     m_Curve:

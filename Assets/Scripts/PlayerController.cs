@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector4 SmoothedInput;
 
+    public float torque = 5;
+
+
+    private Rigidbody m_rigidbody;
+
     //SpaceShip settings
     [SerializeField]
     private AnimationCurve m_spaceshipAccelerationCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f); //speed changes over time
@@ -76,6 +81,7 @@ public class PlayerController : MonoBehaviour
         m_lookAtPointOffset = OnIdle;
 
         m_cameraTransform.position = m_transform.position + CameraOffsetVector;
+        m_rigidbody = GetComponent<Rigidbody>();
     }
 
     private void LateUpdate()
@@ -198,8 +204,10 @@ public class PlayerController : MonoBehaviour
             m_transform.localRotation *= Quaternion.AngleAxis(SmoothedInput[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
         }
 
-        m_transform.localPosition += m_transform.forward * CurrentSpeed * Time.deltaTime;
-
-        Player.localRotation = Quaternion.Slerp(Player.localRotation, m_InitialRotation * Quaternion.AngleAxis(-SmoothedInput.y * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+        //m_transform.localPosition += m_transform.forward * CurrentSpeed * Time.deltaTime;
+        m_rigidbody.AddForce(m_transform.forward * CurrentSpeed);
+        
+        m_rigidbody.AddTorque(transform.up * torque * SmoothedInput.y);
+        //Player.localRotation = Quaternion.Slerp(Player.localRotation, m_InitialRotation * Quaternion.AngleAxis(-SmoothedInput.y * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 }

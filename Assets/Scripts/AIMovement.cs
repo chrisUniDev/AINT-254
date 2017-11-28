@@ -29,6 +29,8 @@ public class AIMovement : MonoBehaviour {
 
     private Vector3[] RotationDirections = { Vector3.right, Vector3.up, Vector3.forward };
 
+    public float torque = 5;
+
     private Quaternion m_InitialRotation;
 
     Vector3 acceleration;
@@ -37,7 +39,10 @@ public class AIMovement : MonoBehaviour {
     float detectionDistance = 20f;
     float frontDetectionDistance = 180f;
     float rayCastOffset = 5f;
-    
+
+    private float m_angle;
+    private float m_angleY;
+
 
     void Start() {
 
@@ -74,11 +79,31 @@ public class AIMovement : MonoBehaviour {
             velocity = velocity.normalized * SpeedRange.y;
         }
 
-        rigidBody.velocity = velocity;
+        //rigidBody.velocity = velocity;
+        rigidBody.AddForce(transform.forward * CurrentSpeed);
 
         Quaternion desiredRotation = Quaternion.LookRotation(velocity);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * 3);
+        //rotation
+        //transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * 3);
+        //Quaternion rotation = Quaternion.LookRotation(forces);
+
+        Vector3 m_targetpos = nodes[currentNode].position - transform.position;
+        Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode].position);
+
+
+        m_angle = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
+        m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
+
+        Vector3 eularAngleVelocity = new Vector3(0,m_angle,0);
+
+        Quaternion deltaRotation = Quaternion.Euler(eularAngleVelocity * Time.deltaTime);
+
+        rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
+
+
+
+
 
     }
 
