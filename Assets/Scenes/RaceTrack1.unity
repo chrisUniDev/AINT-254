@@ -615,7 +615,6 @@ GameObject:
   - component: {fileID: 71112737}
   - component: {fileID: 71112736}
   - component: {fileID: 71112735}
-  - component: {fileID: 71112734}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: ShipMesh
@@ -637,39 +636,6 @@ Transform:
   m_Father: {fileID: 36098449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 900, z: 0}
---- !u!114 &71112734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 71112732}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42155c8f788c2ec41b30896f40062803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 2031780932}
-  rotationalDamp: 0.5
-  DodgeMultiplier: 10
-  AccelerationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  SpeedRange: {x: 300, y: 600}
 --- !u!114 &71112735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2413,7 +2379,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 139401694
+  randomSeed: 334075931
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17710,7 +17676,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669888632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df29185c732c334da8757274d3bb168, type: 3}
   m_Name: 
@@ -19054,7 +19020,6 @@ GameObject:
   - component: {fileID: 1901662890}
   - component: {fileID: 1901662889}
   - component: {fileID: 1901662888}
-  - component: {fileID: 1901662887}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: ShipMesh
@@ -19076,39 +19041,6 @@ Transform:
   m_Father: {fileID: 87353678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 900, z: 0}
---- !u!114 &1901662887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1901662885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42155c8f788c2ec41b30896f40062803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 2031780932}
-  rotationalDamp: 0.5
-  DodgeMultiplier: 10
-  AccelerationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  SpeedRange: {x: 300, y: 600}
 --- !u!114 &1901662888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20368,7 +20300,6 @@ GameObject:
   - component: {fileID: 2049074093}
   - component: {fileID: 2049074092}
   - component: {fileID: 2049074091}
-  - component: {fileID: 2049074090}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: ShipMesh
@@ -20390,39 +20321,6 @@ Transform:
   m_Father: {fileID: 36843382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 900, z: 0}
---- !u!114 &2049074090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049074088}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42155c8f788c2ec41b30896f40062803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 2031780932}
-  rotationalDamp: 0.5
-  DodgeMultiplier: 10
-  AccelerationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  SpeedRange: {x: 300, y: 600}
 --- !u!114 &2049074091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20462,7 +20360,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  SpeedRange: {x: 50, y: 400}
+  SpeedRange: {x: 10, y: 1000}
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
@@ -20981,7 +20879,7 @@ Rigidbody:
   m_AngularDrag: 0.5
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!82 &2118677263
@@ -21082,7 +20980,7 @@ MonoBehaviour:
   m_audioSource: {fileID: 2118677265}
   m_cameraAngle: 14
   m_cameraOffset: 70
-  m_cameraPosSmooth: 0.1
+  m_cameraPosSmooth: 0.2
   m_cameraRotationSmooth: 0.4
   m_camreaOnRollCompensationFactor: 0.1
   torque: 5
@@ -21125,7 +21023,7 @@ MonoBehaviour:
   BankAngleSmooth: 2.5
   Maneuverability: {x: 80, y: 80, z: -40}
   MaxBankAngleOnTurn: 40
-  SpeedRange: {x: 100, y: 800}
+  SpeedRange: {x: 500, y: 1000}
   m_controllerSensitivity: 1.5
   m_controllerSensitivityOnMaxSpeed: 1
   ContAxisX: LeftHorizontal

@@ -42,6 +42,7 @@ public class AIMovement : MonoBehaviour {
 
     private float m_angle;
     private float m_angleY;
+    private float m_angleX;
 
 
     void Start() {
@@ -59,7 +60,7 @@ public class AIMovement : MonoBehaviour {
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         Debug.DrawLine(transform.position, nodes[currentNode].position);
@@ -93,9 +94,10 @@ public class AIMovement : MonoBehaviour {
 
 
         m_angle = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
-        m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
+        m_angleY = Mathf.Atan2(m_localTarget.z, m_localTarget.y) * Mathf.Rad2Deg;
+        m_angleX = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
 
-        Vector3 eularAngleVelocity = new Vector3(0,m_angle,0);
+        Vector3 eularAngleVelocity = new Vector3(0, m_angle, m_angleY);
 
         Quaternion deltaRotation = Quaternion.Euler(eularAngleVelocity * Time.deltaTime);
 

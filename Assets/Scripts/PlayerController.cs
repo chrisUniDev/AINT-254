@@ -92,11 +92,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ShipAudio();
+        
+
+
+
+    }
+
+    private void FixedUpdate()
+    {
         UpdateInput();
         UpdateOrientationAndPos();
-
-
-
     }
 
     bool isMain = false;
