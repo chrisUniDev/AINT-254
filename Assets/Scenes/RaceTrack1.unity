@@ -311,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &36098449
 Transform:
   m_ObjectHideFlags: 0
@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 37001568}
   - component: {fileID: 37001570}
   - component: {fileID: 37001569}
+  - component: {fileID: 37001571}
   m_Layer: 0
   m_Name: roof_window_20
   m_TagString: Untagged
@@ -427,6 +428,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 37001567}
+  m_Mesh: {fileID: 4300004, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &37001571
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37001567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &40082998
 GameObject:
@@ -648,7 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 2031780932}
-  distanceFromNode: 5
+  distanceFromNode: 20
   rotationalDamp: 0.5
   DodgeMultiplier: 10
   AccelerationCurve:
@@ -675,7 +690,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  SpeedRange: {x: 50, y: 400}
+  SpeedRange: {x: 200, y: 400}
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
@@ -851,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &87353678
 Transform:
   m_ObjectHideFlags: 0
@@ -8509,6 +8524,7 @@ GameObject:
   - component: {fileID: 515620543}
   - component: {fileID: 515620545}
   - component: {fileID: 515620544}
+  - component: {fileID: 515620546}
   m_Layer: 0
   m_Name: roof_window_17
   m_TagString: Untagged
@@ -8571,6 +8587,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 515620542}
+  m_Mesh: {fileID: 4300010, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &515620546
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515620542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &516650445
 GameObject:
@@ -11928,6 +11958,7 @@ GameObject:
   - component: {fileID: 946025048}
   - component: {fileID: 946025050}
   - component: {fileID: 946025049}
+  - component: {fileID: 946025051}
   m_Layer: 0
   m_Name: roof_window_16
   m_TagString: Untagged
@@ -11990,6 +12021,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 946025047}
+  m_Mesh: {fileID: 4300012, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &946025051
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946025047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300012, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &953088350
 GameObject:
@@ -12317,6 +12362,7 @@ GameObject:
   - component: {fileID: 992471430}
   - component: {fileID: 992471432}
   - component: {fileID: 992471431}
+  - component: {fileID: 992471433}
   m_Layer: 0
   m_Name: roof_window_14
   m_TagString: Untagged
@@ -12379,6 +12425,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 992471429}
+  m_Mesh: {fileID: 4300016, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &992471433
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992471429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300016, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1003776220
 GameObject:
@@ -12765,6 +12825,7 @@ GameObject:
   - component: {fileID: 1040330546}
   - component: {fileID: 1040330548}
   - component: {fileID: 1040330547}
+  - component: {fileID: 1040330549}
   m_Layer: 0
   m_Name: roof_window_15
   m_TagString: Untagged
@@ -12827,6 +12888,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1040330545}
+  m_Mesh: {fileID: 4300014, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1040330549
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040330545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300014, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1001 &1044915672
 Prefab:
@@ -13282,6 +13357,7 @@ GameObject:
   - component: {fileID: 1136908728}
   - component: {fileID: 1136908730}
   - component: {fileID: 1136908729}
+  - component: {fileID: 1136908731}
   m_Layer: 0
   m_Name: roof_window_21
   m_TagString: Untagged
@@ -13345,6 +13421,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1136908727}
   m_Mesh: {fileID: 4300002, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1136908731
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136908727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1139329301
 GameObject:
   m_ObjectHideFlags: 0
@@ -13355,6 +13445,7 @@ GameObject:
   - component: {fileID: 1139329302}
   - component: {fileID: 1139329304}
   - component: {fileID: 1139329303}
+  - component: {fileID: 1139329305}
   m_Layer: 0
   m_Name: roof_window_18
   m_TagString: Untagged
@@ -13417,6 +13508,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1139329301}
+  m_Mesh: {fileID: 4300008, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1139329305
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139329301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1149002840
 GameObject:
@@ -15136,6 +15241,7 @@ GameObject:
   - component: {fileID: 1351954020}
   - component: {fileID: 1351954022}
   - component: {fileID: 1351954021}
+  - component: {fileID: 1351954023}
   m_Layer: 0
   m_Name: ChamferCyl001
   m_TagString: Untagged
@@ -15196,6 +15302,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351954019}
+  m_Mesh: {fileID: 4300026, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1351954023
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1351954019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300026, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1359853740
 GameObject:
@@ -15956,6 +16076,7 @@ GameObject:
   - component: {fileID: 1481364872}
   - component: {fileID: 1481364874}
   - component: {fileID: 1481364873}
+  - component: {fileID: 1481364875}
   m_Layer: 0
   m_Name: roof_window_19
   m_TagString: Untagged
@@ -16018,6 +16139,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481364871}
+  m_Mesh: {fileID: 4300006, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1481364875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481364871}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1482645552 stripped
 GameObject:
@@ -16217,6 +16352,7 @@ GameObject:
   - component: {fileID: 1501207242}
   - component: {fileID: 1501207244}
   - component: {fileID: 1501207243}
+  - component: {fileID: 1501207245}
   m_Layer: 0
   m_Name: roof_window_9
   m_TagString: Untagged
@@ -16278,6 +16414,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501207241}
+  m_Mesh: {fileID: 4300020, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1501207245
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1501207241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300020, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1507063279
 GameObject:
@@ -16912,6 +17062,7 @@ GameObject:
   - component: {fileID: 1572101071}
   - component: {fileID: 1572101073}
   - component: {fileID: 1572101072}
+  - component: {fileID: 1572101074}
   m_Layer: 0
   m_Name: OilTank001
   m_TagString: Untagged
@@ -16972,6 +17123,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1572101070}
+  m_Mesh: {fileID: 4300000, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1572101074
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572101070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1001 &1582691697
 Prefab:
@@ -19080,7 +19245,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  SpeedRange: {x: 50, y: 400}
+  SpeedRange: {x: 200, y: 400}
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
@@ -19181,6 +19346,7 @@ GameObject:
   - component: {fileID: 1925310962}
   - component: {fileID: 1925310964}
   - component: {fileID: 1925310963}
+  - component: {fileID: 1925310965}
   m_Layer: 0
   m_Name: roof_window_7
   m_TagString: Untagged
@@ -19243,6 +19409,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925310961}
+  m_Mesh: {fileID: 4300024, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1925310965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925310961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300024, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1930410831
 GameObject:
@@ -19417,6 +19597,7 @@ GameObject:
   - component: {fileID: 1982745969}
   - component: {fileID: 1982745971}
   - component: {fileID: 1982745970}
+  - component: {fileID: 1982745972}
   m_Layer: 0
   m_Name: roof_window_8
   m_TagString: Untagged
@@ -19479,6 +19660,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1982745968}
+  m_Mesh: {fileID: 4300022, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &1982745972
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982745968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300022, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &1988421606
 GameObject:
@@ -19881,6 +20076,7 @@ GameObject:
   - component: {fileID: 2016083474}
   - component: {fileID: 2016083476}
   - component: {fileID: 2016083475}
+  - component: {fileID: 2016083477}
   m_Layer: 0
   m_Name: roof_window_13
   m_TagString: Untagged
@@ -19943,6 +20139,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016083473}
+  m_Mesh: {fileID: 4300018, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
+--- !u!64 &2016083477
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016083473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300018, guid: 81d6b951c46017b4295489e8f259a8a0, type: 3}
 --- !u!1 &2020158928
 GameObject:
@@ -20295,11 +20505,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2049074089}
   - component: {fileID: 2049074096}
-  - component: {fileID: 2049074095}
   - component: {fileID: 2049074094}
   - component: {fileID: 2049074093}
   - component: {fileID: 2049074092}
   - component: {fileID: 2049074091}
+  - component: {fileID: 2049074090}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: ShipMesh
@@ -20321,6 +20531,18 @@ Transform:
   m_Father: {fileID: 36843382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 900, z: 0}
+--- !u!65 &2049074090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049074088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3667605, y: 1.6454792, z: 3.0793805}
+  m_Center: {x: -0.0938747, y: 0.32274035, z: 1.0396903}
 --- !u!114 &2049074091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20333,7 +20555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 2031780932}
-  distanceFromNode: 5
+  distanceFromNode: 200
   rotationalDamp: 0.5
   DodgeMultiplier: 10
   AccelerationCurve:
@@ -20360,7 +20582,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  SpeedRange: {x: 10, y: 1000}
+  SpeedRange: {x: 500, y: 1000}
   BankAngleSmooth: 2.5
   Maneuverability: {x: 75, y: 75, z: -50}
   MaxBankAngleOnTurn: 60
@@ -20393,7 +20615,7 @@ Rigidbody:
   m_GameObject: {fileID: 2049074088}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 3
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -20432,18 +20654,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2049074095
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049074088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2049074096
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20981,7 +21191,7 @@ MonoBehaviour:
   m_cameraAngle: 14
   m_cameraOffset: 70
   m_cameraPosSmooth: 0.2
-  m_cameraRotationSmooth: 0.4
+  m_cameraRotationSmooth: 2
   m_camreaOnRollCompensationFactor: 0.1
   torque: 5
   m_spaceshipAccelerationCurve:

@@ -13,7 +13,7 @@ public class AIMovement : MonoBehaviour {
     private List<Transform> nodes;
     private int currentNode = 0;
 
-    public float distanceFromNode = 5;
+    public float distanceFromNode = 100;
 
     //public float movementSpeed = 10f;
     public float rotationalDamp = 0.5f;
@@ -36,12 +36,12 @@ public class AIMovement : MonoBehaviour {
     Vector3 acceleration;
     Vector3 velocity;
 
-    float detectionDistance = 20f;
+    float detectionDistance = 100;
     float frontDetectionDistance = 180f;
     float rayCastOffset = 5f;
 
-    private float m_angle;
     private float m_angleY;
+    private float m_angleZ;
     private float m_angleX;
 
 
@@ -93,11 +93,11 @@ public class AIMovement : MonoBehaviour {
         Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode].position);
 
 
-        m_angle = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
-        m_angleY = Mathf.Atan2(m_localTarget.z, m_localTarget.y) * Mathf.Rad2Deg;
-        m_angleX = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
+        m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
+        m_angleX = Mathf.Atan2(m_localTarget.y, m_localTarget.z) * Mathf.Rad2Deg;
+        m_angleZ = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
 
-        Vector3 eularAngleVelocity = new Vector3(0, m_angle, m_angleY);
+        Vector3 eularAngleVelocity = new Vector3(0, m_angleY, m_angleX);
 
         Quaternion deltaRotation = Quaternion.Euler(eularAngleVelocity * Time.deltaTime);
 
@@ -288,16 +288,19 @@ public class AIMovement : MonoBehaviour {
                 }
                 
                 if (raycastOffset != Vector3.zero) {
-                    transform.Rotate (raycastOffset * DodgeMultiplier * Time.deltaTime);
+            //transform.Rotate (raycastOffset * DodgeMultiplier * Time.deltaTime);
+            //rigidBody.MoveRotation(rigidBody.rotation * raycastOffset * DodgeMultiplier * Time.deltaTime);
+                //rigidBody.MovePosition();
+                rigidBody.AddForce(raycastOffset * DodgeMultiplier * Time.deltaTime);
                 } else {
-                    Turn ();
+                    //Turn ();
                 }
             }
             
     
     private void CheckWayPointDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 60f)
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode)
         {
             if (currentNode == nodes.Count - 1)
             {

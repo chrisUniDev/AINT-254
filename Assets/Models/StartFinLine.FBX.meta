@@ -77,6 +77,20 @@ ModelImporter:
     4300022: roof_window_8
     4300024: roof_window_7
     4300026: ChamferCyl001
+    6400000: ChamferCyl001
+    6400002: OilTank001
+    6400004: roof_window_13
+    6400006: roof_window_14
+    6400008: roof_window_15
+    6400010: roof_window_16
+    6400012: roof_window_17
+    6400014: roof_window_18
+    6400016: roof_window_19
+    6400018: roof_window_20
+    6400020: roof_window_21
+    6400022: roof_window_7
+    6400024: roof_window_8
+    6400026: roof_window_9
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -108,7 +122,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
