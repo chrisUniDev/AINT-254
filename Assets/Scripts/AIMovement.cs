@@ -90,7 +90,7 @@ public class AIMovement : MonoBehaviour {
         //Quaternion rotation = Quaternion.LookRotation(forces);
 
         Vector3 m_targetpos = nodes[currentNode].position - transform.position;
-        Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode].position);
+        Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode + 2].position);
 
 
         m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
@@ -296,21 +296,34 @@ public class AIMovement : MonoBehaviour {
                     //Turn ();
                 }
             }
-            
+
+
+    int m_cashedNode;
     
     private void CheckWayPointDistance()
     {
+    
+
+        if (currentNode == 0)
+        {
+            currentNode = 2;
+        }
         if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode)
         {
             if (currentNode == nodes.Count - 1)
             {
-                currentNode = 0;
+                currentNode = 2;
             }
             else
             {
                 currentNode++;
-                
+                m_cashedNode = currentNode;
             }
+        }
+        else if (Vector3.Distance(transform.position, nodes[currentNode].position) > distanceFromNode * 2 && m_cashedNode == currentNode)
+        {
+          
+            currentNode = currentNode + 20;
         }
     }
             

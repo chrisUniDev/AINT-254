@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class shipCheckPoint : MonoBehaviour {
@@ -14,6 +15,12 @@ public class shipCheckPoint : MonoBehaviour {
     public int currentLap = 0;
 	public Vector3 startPos;
 
+    public Text displayReturnTrack;
+
+    [SerializeField]
+    private bool player;
+
+    [SerializeField]
     private int maxDistanceBeforeRespawn = 8000;
 
 	public float DistanceToNextCheckPoint;
@@ -33,6 +40,7 @@ public class shipCheckPoint : MonoBehaviour {
     // Use this for initialization
     void Start () 
 	{
+        
         audioSource = GetComponent<AudioSource>();
         checkpoints = GameObject.FindGameObjectWithTag("checkpoints");
         startPos = transform.position;
@@ -112,11 +120,34 @@ public class shipCheckPoint : MonoBehaviour {
     //If the player flys too far away from the checkpoint
     void TraveledToFar()
     {
-        if (DistanceToNextCheckPoint > maxDistanceBeforeRespawn)
+          if (DistanceToNextCheckPoint > maxDistanceBeforeRespawn)
         {
             this.transform.position = Respawnpoints[currentCheckPoint - 1].transform.position;
             this.transform.rotation = Respawnpoints[currentCheckPoint - 1].transform.rotation;
+            if (player == true)
+            {
 
+                displayReturnTrack.enabled = false;
+            }
+           
+        }
+       else if (DistanceToNextCheckPoint > maxDistanceBeforeRespawn / 1.5f)
+        {
+            if (player == true)
+            {
+
+                displayReturnTrack.enabled = true;
+            }
+
+        }
+     
+        else if (DistanceToNextCheckPoint < maxDistanceBeforeRespawn)
+        {
+            if (player == true)
+            {
+                displayReturnTrack.enabled = false;
+            }
+            
         }
     }
 

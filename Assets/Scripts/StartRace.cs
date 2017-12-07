@@ -34,6 +34,8 @@ public class StartRace : MonoBehaviour
                 tempSpeed = playerMove.SpeedRange;
 
                 playerMove.SpeedRange = new Vector2(0f,0f);
+
+                playerMove.allowMovement = false;
                 
             }
 
@@ -63,7 +65,9 @@ public class StartRace : MonoBehaviour
                     playerMove = ships[i].GetComponent<PlayerController>();
 
                     playerMove.SpeedRange = tempSpeed;
-                   
+
+                    playerMove.allowMovement = true;
+
                 }
 
             }

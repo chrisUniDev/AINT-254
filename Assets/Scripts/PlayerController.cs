@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     public float torque = 5;
 
+    public bool allowMovement = true;
+
 
     private Rigidbody m_rigidbody;
 
@@ -100,8 +102,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdateInput();
-        UpdateOrientationAndPos();
+        if (allowMovement == true)
+        {
+            UpdateInput();
+            UpdateOrientationAndPos();
+        }
+       
     }
 
     bool isMain = false;
