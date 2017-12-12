@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Skybox_purple
+  m_Name: Skybox_purple 1
   m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: 82d8d463332a90346bd854b4ecd9a638, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31420eeb933ca314884fcfbd595fcba9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 2800000, guid: 64c5ec92261f9c444a6e3bded096217b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0f1f7a97d900e2940a4e3aafebc0aa98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -47,11 +47,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: 997f0696ea884c244b256ac113550223, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46100648fa713d84da1b5149dd175034, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: e65f837f295cae845b9c8161c96d56de, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ced9489f3a8f4f4eb6244eefc03ae90, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:

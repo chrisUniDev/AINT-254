@@ -66,7 +66,7 @@ public class AIMovement : MonoBehaviour {
         Debug.DrawLine(transform.position, nodes[currentNode].position);
 
         Pathfinding();
-        Move();
+       
         CheckWayPointDistance();
 
         Vector3 forces = MoveTowardsNode(nodes[currentNode].position);
@@ -143,49 +143,6 @@ public class AIMovement : MonoBehaviour {
     }
 
 
-    void Turn()
-    {
-       // Vector3 rotationsdirections = new Vector3(1,1,1);
-       // Debug.Log(CurrentSpeed);
-
-       // for (int i = 0; i < 3; ++i)
-       // {
-       //     //Player.localRotation *= Quaternion.AngleAxis(rotationsdirections[i] * Maneuverability[i] * Time.deltaTime, RotationDirections[i]);
-       // }
-
-
-       //// Player.localPosition += Player.forward * CurrentSpeed * Time.deltaTime;
-
-
-       // Vector3 pos = nodes[currentNode].position - transform.position;
-       // Quaternion rotation = Quaternion.LookRotation(pos);
-
-      
-
-       // float angle = Vector3.Angle(Player.position, pos);
-       // float sinAngle = Mathf.Sign(angle);
-
-       // if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50)
-       // {
-       //     transform.rotation = Quaternion.Slerp(transform.rotation, rotation * Quaternion.AngleAxis(-sinAngle * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
-       // }
-       // else
-       // {
-
-       //     transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
-       // }
-
-        
-        //Player.localRotation = Quaternion.Slerp(rotation, m_InitialRotation * Quaternion.AngleAxis(-rotation.y* MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
-    }
-
-    void Move()
-    {
-
-        //transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
-
-    }
-
     void Pathfinding()
     {
 
@@ -209,18 +166,6 @@ public class AIMovement : MonoBehaviour {
         Vector3 HorizonalCenterFront = transform.position + transform.forward * rayCastOffset;
         Vector3 HorizonalCenterBack = transform.position - transform.forward * rayCastOffset;
 
-
-        //if (Physics.SphereCast(transform.position, detectionDistance, transform.forward, out hit, 50))
-        //{
-        //    Debug.Log("Opps we Hit");
-            
-            
-        //}
-
-
-
-
-        
                 if (Physics.Raycast(left, transform.forward, out hit, frontDetectionDistance)) {
                     raycastOffset += Vector3.right;
                     Debug.DrawRay (left, transform.forward * frontDetectionDistance, Color.cyan);
@@ -292,8 +237,6 @@ public class AIMovement : MonoBehaviour {
             //rigidBody.MoveRotation(rigidBody.rotation * raycastOffset * DodgeMultiplier * Time.deltaTime);
                 //rigidBody.MovePosition();
                 rigidBody.AddForce(raycastOffset * DodgeMultiplier * Time.deltaTime);
-                } else {
-                    //Turn ();
                 }
             }
 
