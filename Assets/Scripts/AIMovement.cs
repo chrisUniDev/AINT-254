@@ -253,7 +253,7 @@ public class AIMovement : MonoBehaviour {
         }
         if (Vector3.Distance(transform.position, nodes[currentNode].position) < distanceFromNode)
         {
-            if (currentNode == nodes.Count - 1)
+            if (currentNode == nodes.Count - 2 || currentNode >= nodes.Count - 2)
             {
                 currentNode = 2;
             }
@@ -267,6 +267,10 @@ public class AIMovement : MonoBehaviour {
         {
           
             currentNode = currentNode + 20;
+        }
+        if (currentNode == nodes.Count - 2 || currentNode >= nodes.Count - 2)
+        {
+            currentNode = 2;
         }
     }
             
