@@ -36,9 +36,12 @@ public class AIMovement : MonoBehaviour {
     Vector3 acceleration;
     Vector3 velocity;
 
-    float detectionDistance = 100;
-    float frontDetectionDistance = 180f;
+    [SerializeField]
+    float detectionDistance = 500;
+    [SerializeField]
+    float frontDetectionDistance = 580f;
     float rayCastOffset = 5f;
+    
 
     private float m_angleY;
     private float m_angleZ;
@@ -69,39 +72,7 @@ public class AIMovement : MonoBehaviour {
        
         CheckWayPointDistance();
 
-        Vector3 forces = MoveTowardsNode(nodes[currentNode].position);
-
-        acceleration = forces;
-
-        velocity += 2 * acceleration * Time.deltaTime;
-
-        if (velocity.magnitude > SpeedRange.y)
-        {
-            velocity = velocity.normalized * SpeedRange.y;
-        }
-
-        //rigidBody.velocity = velocity;
-        rigidBody.AddForce(transform.forward * CurrentSpeed);
-
-        Quaternion desiredRotation = Quaternion.LookRotation(velocity);
-
-        //rotation
-        //transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * 3);
-        //Quaternion rotation = Quaternion.LookRotation(forces);
-
-        Vector3 m_targetpos = nodes[currentNode].position - transform.position;
-        Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode + 2].position);
-
-
-        m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
-        m_angleX = Mathf.Atan2(m_localTarget.y, m_localTarget.z) * Mathf.Rad2Deg;
-        m_angleZ = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
-
-        Vector3 eularAngleVelocity = new Vector3(0, m_angleY, m_angleX);
-
-        Quaternion deltaRotation = Quaternion.Euler(eularAngleVelocity * Time.deltaTime);
-
-        rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
+        
 
 
 
@@ -148,7 +119,7 @@ public class AIMovement : MonoBehaviour {
 
         RaycastHit hit;
         Vector3 raycastOffset = Vector3.zero;
-        float frontCenterAngle = 30f;
+        float frontCenterAngle = 100f;
 
         //Front Sensor Array
         Vector3 left = transform.position - transform.right * rayCastOffset;
@@ -237,8 +208,48 @@ public class AIMovement : MonoBehaviour {
             //rigidBody.MoveRotation(rigidBody.rotation * raycastOffset * DodgeMultiplier * Time.deltaTime);
                 //rigidBody.MovePosition();
                 rigidBody.AddForce(raycastOffset * DodgeMultiplier * Time.deltaTime);
-                }
+            rigidBody.AddTorque(raycastOffset * DodgeMultiplier * Time.deltaTime);
+           
+        }
+        else
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(velocity);
+
+            //rotation
+            //transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * 3);
+            //Quaternion rotation = Quaternion.LookRotation(forces);
+
+            Vector3 m_targetpos = nodes[currentNode].position - transform.position;
+            Vector3 m_localTarget = transform.InverseTransformPoint(nodes[currentNode + 2].position);
+
+
+            m_angleY = Mathf.Atan2(m_localTarget.x, m_localTarget.z) * Mathf.Rad2Deg;
+            m_angleX = Mathf.Atan2(m_localTarget.y, m_localTarget.z) * Mathf.Rad2Deg;
+            m_angleZ = Mathf.Atan2(m_localTarget.x, m_localTarget.y) * Mathf.Rad2Deg;
+
+            Vector3 eularAngleVelocity = new Vector3(0, m_angleY, m_angleX);
+
+            Quaternion deltaRotation = Quaternion.Euler(eularAngleVelocity * Time.deltaTime);
+
+            rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
+
+
+            Vector3 forces = MoveTowardsNode(nodes[currentNode].position);
+
+            acceleration = forces;
+
+            velocity += 2 * acceleration * Time.deltaTime;
+
+            if (velocity.magnitude > SpeedRange.y)
+            {
+                velocity = velocity.normalized * SpeedRange.y;
             }
+
+            //rigidBody.velocity = velocity;
+            rigidBody.AddForce(transform.forward * CurrentSpeed);
+
+        }
+    }
 
 
     int m_cashedNode;
