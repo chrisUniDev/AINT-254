@@ -11,7 +11,7 @@ public class AIMovement : MonoBehaviour {
     private Transform Player;
 
     private List<Transform> nodes;
-    private int currentNode = 0;
+    public int currentNode = 0;
 
     public float distanceFromNode = 100;
 

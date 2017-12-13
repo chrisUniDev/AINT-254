@@ -35,7 +35,7 @@ public class shipCheckPoint : MonoBehaviour {
     public List<Transform> checkpointNodes = new List<Transform>();
 
     private GameObject[] tempRespawn;
-    private GameObject[] Respawnpoints;
+    public GameObject[] Respawnpoints;
 
     // Use this for initialization
     void Start () 
@@ -56,15 +56,15 @@ public class shipCheckPoint : MonoBehaviour {
             }
         }
 
-        tempRespawn = GameObject.FindGameObjectsWithTag("RespawnPoint");
+        //tempRespawn = GameObject.FindGameObjectsWithTag("RespawnPoint");
 
-        Respawnpoints = new GameObject[tempRespawn.Length];
-
+        //Respawnpoints = new GameObject[tempRespawn.Length];
+        /*
         for (int i = 0; i < tempRespawn.Length; i++)
         {
 
             Respawnpoints[i] = tempRespawn[tempRespawn.Length -1 - i];
-        }
+        }*/
 
 
 	}
