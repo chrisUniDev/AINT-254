@@ -5,6 +5,8 @@ using UnityEngine;
 public class Death : MonoBehaviour {
 
     Rigidbody rigidbody;
+    public GameObject mesh;
+    public PlayerController controls;
 
     [SerializeField]private bool m_AI = false;
 
@@ -29,6 +31,16 @@ public class Death : MonoBehaviour {
 
 	}
 
+    IEnumerator WaitTeleoport()
+    {
+        
+        yield return new WaitForSeconds(2);
+        mesh.SetActive(true);
+        this.transform.position = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.position;
+        this.transform.rotation = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.rotation;
+        controls.enabled = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Object")
@@ -37,8 +49,24 @@ public class Death : MonoBehaviour {
 
             if (rigidbody.velocity.magnitude > 50)
             {
-                this.transform.position = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.position;
-                this.transform.rotation = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.rotation;
+                //ship body to disapear
+                //play explosion
+                mesh.SetActive(false);
+                controls.enabled = false;
+                StartCoroutine(WaitTeleoport());
+                //wait 2 seconds
+                //teleport player
+                //enable ship body 
+
+
+          
+
+
+
+
+
+
+
                 if (m_AI)
                 {
                     for (int i = 0; i < m_checkRespawnValue.Respawnpoints.Length; i++)
