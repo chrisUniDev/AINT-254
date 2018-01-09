@@ -47,7 +47,7 @@ public class Death : MonoBehaviour {
         {
             Debug.Log("HIT");
 
-            if (rigidbody.velocity.magnitude > 50)
+            if (rigidbody.velocity.magnitude > 10)
             {
                 //ship body to disapear
                 //play explosion
