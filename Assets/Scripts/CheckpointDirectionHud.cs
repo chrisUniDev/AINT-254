@@ -16,6 +16,8 @@ public class CheckpointDirectionHud : MonoBehaviour
 
     private shipCheckPoint m_checkpointSystem;
 
+    public Camera cam;
+
 
     void Start()
     {
@@ -36,9 +38,9 @@ public class CheckpointDirectionHud : MonoBehaviour
         m_srenderercenter.enabled = false;
 
 
-        Vector3 m_Pos = Camera.main.WorldToViewportPoint(m_checkpointSystem.checkpointNodes[m_checkpointSystem.currentCheckPoint].transform.position);
+        Vector3 m_Pos = cam.WorldToViewportPoint(m_checkpointSystem.checkpointNodes[m_checkpointSystem.currentCheckPoint].transform.position);
 
-        Vector3 screenpos = Camera.main.WorldToScreenPoint(m_checkpointSystem.checkpointNodes[m_checkpointSystem.currentCheckPoint].transform.position);
+        Vector3 screenpos = cam.WorldToScreenPoint(m_checkpointSystem.checkpointNodes[m_checkpointSystem.currentCheckPoint].transform.position);
 
         
 
