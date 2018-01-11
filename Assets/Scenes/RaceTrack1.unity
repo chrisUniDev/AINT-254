@@ -23863,6 +23863,7 @@ MonoBehaviour:
   m_srenderercenter: {fileID: 1232429649}
   player: {fileID: 2118677256}
   cam: {fileID: 1298576973}
+  player1: 1
 --- !u!212 &1017105387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24304,6 +24305,7 @@ MonoBehaviour:
   m_srenderercenter: {fileID: 1847394052}
   player: {fileID: 2044123284}
   cam: {fileID: 254186171}
+  player1: 0
 --- !u!212 &1036890045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36216,7 +36218,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531265923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31, y: 22, z: -252.7}
+  m_LocalPosition: {x: 52.7, y: 22, z: -252.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2118677257}
@@ -37948,7 +37950,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 254186171}
   m_PlaneDistance: 100
-  m_PixelPerfect: 1
+  m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -39083,7 +39085,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1670762748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.6, y: 22, z: -252.7}
+  m_LocalPosition: {x: -23.6, y: 22, z: -252.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2044123294}
@@ -46214,9 +46216,13 @@ MonoBehaviour:
   m_audioSource: {fileID: 2044123286}
   m_cameraAngle: 14
   m_cameraOffset: 70
-  m_cameraPosSmooth: 0.2
+  m_cameraPosSmooth: 10
   m_cameraRotationSmooth: 2
   m_camreaOnRollCompensationFactor: 0.1
+  OnIdle: {x: 0, y: 10}
+  Smooth: {x: 5, y: 5}
+  OnMaxSpeed: {x: 10, y: -10}
+  OnTurn: {x: 70, y: -10}
   torque: 5
   allowMovement: 1
   m_spaceshipAccelerationCurve:
@@ -47913,9 +47919,13 @@ MonoBehaviour:
   m_audioSource: {fileID: 2118677265}
   m_cameraAngle: 14
   m_cameraOffset: 70
-  m_cameraPosSmooth: 0.2
+  m_cameraPosSmooth: 1
   m_cameraRotationSmooth: 2
-  m_camreaOnRollCompensationFactor: 0.1
+  m_camreaOnRollCompensationFactor: 0.5
+  OnIdle: {x: 0, y: 10}
+  Smooth: {x: 5, y: 5}
+  OnMaxSpeed: {x: 10, y: -10}
+  OnTurn: {x: 70, y: -10}
   torque: 5
   allowMovement: 1
   m_spaceshipAccelerationCurve:

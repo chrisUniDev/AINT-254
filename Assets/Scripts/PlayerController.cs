@@ -28,10 +28,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float m_camreaOnRollCompensationFactor = 0.5f; //Tilt of the camera when the spaceship is doing a roll
 
-    private Vector2 OnIdle = new Vector2(0.0f, 10.0f); //Offset of the look-at point (relative to the spaceship) when flying straight with a minimum speed
-    private Vector2 Smooth = new Vector2(30.0f, 30.0f); //How fast the look-at point interpolates to the desired value. Higher = faster.
-    private Vector2 OnMaxSpeed = new Vector2(50.0f, -50.0f); //Offset of the look-at point (relative to the spaceship) when flying or turning with a maximum speed
-    private Vector2 OnTurn = new Vector2(30.0f, -30.0f); //Offset of the look-at point (relative to the spaceship) when turning with a minimum speed
+    public Vector2 OnIdle = new Vector2(0.0f, 10.0f); //Offset of the look-at point (relative to the spaceship) when flying straight with a minimum speed
+    public Vector2 Smooth = new Vector2(5.0f, 5.0f); //How fast the look-at point interpolates to the desired value. Higher = faster.
+    public Vector2 OnMaxSpeed = new Vector2(10.0f, -10.0f); //Offset of the look-at point (relative to the spaceship) when flying or turning with a maximum speed
+    public Vector2 OnTurn = new Vector2(10.0f, -10.0f); //Offset of the look-at point (relative to the spaceship) when turning with a minimum speed
 
     private float m_CameraDistance; //the idle camera distance
     private Quaternion m_InitialRotation; //the players initial rotation
@@ -219,6 +219,6 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.AddForce(m_transform.forward * CurrentSpeed);
         
         m_rigidbody.AddTorque(transform.up * torque * SmoothedInput.y);
-        //Player.localRotation = Quaternion.Slerp(Player.localRotation, m_InitialRotation * Quaternion.AngleAxis(-SmoothedInput.y * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
+        Player.localRotation = Quaternion.Slerp(Player.localRotation, m_InitialRotation * Quaternion.AngleAxis(-SmoothedInput.y * MaxBankAngleOnTurn, Vector3.forward), BankAngleSmooth * Time.deltaTime);
     }
 }
