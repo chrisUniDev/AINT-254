@@ -88,26 +88,26 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        UpdateCamera();
+       
     }
 
     private void Update()
     {
         ShipAudio();
-        
 
-
-
-    }
-
-    private void FixedUpdate()
-    {
         if (allowMovement == true)
         {
             UpdateInput();
             UpdateOrientationAndPos();
         }
-       
+
+    }
+
+    private void FixedUpdate()
+    {
+
+        UpdateCamera();
+
     }
 
     bool isMain = false;
@@ -158,8 +158,35 @@ public class PlayerController : MonoBehaviour
         Vector3 lookTargetVector = (m_transform.up + m_transform.right * SmoothedInput.z * m_camreaOnRollCompensationFactor).normalized;
 
         Quaternion targetCameraRoation = Quaternion.LookRotation(lookTargetPos - m_cameraTransform.position, lookTargetVector);
+
+        Vector3 relativePosLeft = m_transform.position + m_transform.right * 120;
+        Vector3 relativePosRight = m_transform.position + -m_transform.right * 120;
+
+        Quaternion overidetargetCameraRotationLeft = Quaternion.LookRotation(relativePosLeft - m_cameraTransform.position, lookTargetVector);
+        Quaternion overidetargetCameraRotationRight = Quaternion.LookRotation(relativePosRight - m_cameraTransform.position, lookTargetVector);
+      
+
         //Rotates the camera 
-        m_cameraTransform.rotation = Quaternion.Slerp(m_cameraTransform.rotation, targetCameraRoation, m_cameraRotationSmooth * Time.smoothDeltaTime);
+
+        if (Input.GetAxis(ContAxisZ) < 0)
+        {
+            m_cameraTransform.rotation = Quaternion.Slerp(m_cameraTransform.rotation, overidetargetCameraRotationRight, m_cameraRotationSmooth * Time.smoothDeltaTime);
+        }
+        else if (Input.GetAxis(ContAxisZ) > 0)
+        {
+            m_cameraTransform.rotation = Quaternion.Slerp(m_cameraTransform.rotation, overidetargetCameraRotationLeft, m_cameraRotationSmooth * Time.smoothDeltaTime);
+        }
+        else if (Input.GetAxis(ContAxisZ) == 0)
+        {
+            m_cameraTransform.rotation = Quaternion.Slerp(m_cameraTransform.rotation, targetCameraRoation, m_cameraRotationSmooth * Time.smoothDeltaTime);
+        }
+
+
+
+
+        //
+
+
 
         Vector3 cameraOffset = m_transform.TransformDirection(CameraOffsetVector);
 
@@ -168,10 +195,6 @@ public class PlayerController : MonoBehaviour
         float cameraDistance = cameraOffset.magnitude + (cameraOffset.normalized * SpeedRange.x * Time.smoothDeltaTime / m_cameraPosSmooth).magnitude;
         //Keeps the camera in the ideal distance from the player
         m_CameraDistance = Mathf.Lerp(m_CameraDistance, cameraDistance, CameraDistanceSmooth * Time.deltaTime);
-
-        float baseFrustumHeight = 2.0f * m_CameraDistance * Mathf.Tan(m_CameraFOV * 0.5f * Mathf.Deg2Rad);
-
-        TargetCam.fieldOfView = 2.0f * Mathf.Atan(baseFrustumHeight * 0.5f / Vector3.Distance(m_transform.position, m_cameraTransform.position)) * Mathf.Rad2Deg;
     }
 
     private void UpdateInput()
@@ -185,7 +208,7 @@ public class PlayerController : MonoBehaviour
 
         currentRawInput.x = Input.GetAxis(ContAxisY) * currentControllerSensitivity;
         currentRawInput.y = Input.GetAxis(ContAxisX) * currentControllerSensitivity;
-        currentRawInput.z = Input.GetAxis(ContAxisZ) * currentSpinSpeed;
+        //currentRawInput.z = Input.GetAxis(ContAxisZ) * currentSpinSpeed;
 
         if (Input.GetAxis(ContThrottle) != 0)
         {
@@ -194,8 +217,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxis(ContThrottleReduct) != 0)
         {
-            currentRawInput.w = Input.GetAxis(ContThrottleReduct) * -0.5f;
+            currentRawInput.w = Input.GetAxis(ContThrottleReduct) * -20f;
         }
+
+        //Debug.Log(currentRawInput.w);
 
         //Calculate the smooth input
         Vector4 currentSmoothedInput = Vector4.zero;

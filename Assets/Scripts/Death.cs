@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Death : MonoBehaviour {
 
+
+    public GameObject explosion;
     Rigidbody rigidbody;
     public GameObject mesh;
     public PlayerController controls;
@@ -43,8 +45,7 @@ public class Death : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Object")
-        {
+        
             Debug.Log("HIT");
 
             if (rigidbody.velocity.magnitude > 10)
@@ -53,6 +54,7 @@ public class Death : MonoBehaviour {
                 //play explosion
                 mesh.SetActive(false);
                 controls.enabled = false;
+                Instantiate(explosion, mesh.gameObject.transform.position, Quaternion.identity);
                 StartCoroutine(WaitTeleoport());
                 //wait 2 seconds
                 //teleport player
@@ -84,5 +86,5 @@ public class Death : MonoBehaviour {
                 Debug.Log("Player Explosion");
             }
         }
-    }
+    
 }
