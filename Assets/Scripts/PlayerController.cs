@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Transform Player; //The transfrom mesh of the player
     public Vector4 Response; //how fast the input is interpolated
 
+    public shipCheckPoint racePos;
+
     [SerializeField]
     private AudioSource m_audioSource;
 
@@ -60,7 +62,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float MaxBankAngleOnTurn = 45.0f; //maxium tilt when turning
 
-    public Vector2 SpeedRange = new Vector2(100.0f, 800.0f); //min and max speed
+    public Vector2 SpeedRange = new Vector2(100.0f, 800.0f);
+    private Vector2 CashedSpeedRange;//min and max speed
     [SerializeField]
     private float m_controllerSensitivity; //Controller sensitivity when flying with a minimum speed
     [SerializeField]
@@ -84,6 +87,7 @@ public class PlayerController : MonoBehaviour
 
         m_cameraTransform.position = m_transform.position + CameraOffsetVector;
         m_rigidbody = GetComponent<Rigidbody>();
+        CashedSpeedRange.y = SpeedRange.y;
     }
 
     private void LateUpdate()
@@ -94,6 +98,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ShipAudio();
+
+        if (racePos.racePosition > 0)
+        {
+            SpeedRange.y = 1000 + 200;
+        }
+        else
+        {
+            SpeedRange.y = 1000;
+        }
+
 
         if (allowMovement == true)
         {
@@ -140,6 +154,8 @@ public class PlayerController : MonoBehaviour
 
     public float CurrentSpeed
     {
+        
+
         get
         {
             return Mathf.Lerp(SpeedRange.x, SpeedRange.y, SpeedFactor);

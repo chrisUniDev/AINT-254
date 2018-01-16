@@ -6443,7 +6443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.x
@@ -6451,7 +6451,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchorMin.x
@@ -7992,7 +7992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.x
@@ -8000,7 +8000,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchorMin.x
@@ -12602,7 +12602,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1120310569}
   spMenu: {fileID: 885063399}
   playDemo: {fileID: 1120070859}
-  Level: RaceTrack1
+  Level: RaceTrackSinglePlayer
   progressText: {fileID: 1753290558}
   spButton: {fileID: 1669797020}
   playDemoButton: {fileID: 2025831321}
@@ -18205,7 +18205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.x
@@ -18213,7 +18213,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchorMin.x

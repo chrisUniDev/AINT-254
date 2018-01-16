@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RaceTrackSinglePlayer.unity
-    guid: 41ffdedacd4ea6f4d94227f3ba563bf0
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 149c553dd8db50543a8732dd39c0c628
+  - enabled: 1
+    path: Assets/Scenes/RaceTrackSinglePlayer.unity
+    guid: 41ffdedacd4ea6f4d94227f3ba563bf0
   - enabled: 0
     path: Assets/Scenes/TestLevel.unity
     guid: 04d2325844021e044a4c989f46c4fd56
