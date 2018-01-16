@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class test : MonoBehaviour {
 
+    string[] controllers;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        controllers = Input.GetJoystickNames();
+        Debug.Log(controllers.Length);
+
+        for (int i = 0; i < controllers.Length; i++)
+        {
+            
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
- 
-
-        int i = 0;
-        while (i < 2)
-        {
-            if (Mathf.Abs(Input.GetAxis("LeftHorizontal" + i)) > 0.2F || Mathf.Abs(Input.GetAxis("LeftHorizontal" + i)) > 0.2F)
-                Debug.Log(Input.GetJoystickNames()[i] + " is moved");
-
-            i++;
-        }
-
-    }
+		
+	}
 }
