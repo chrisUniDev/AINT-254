@@ -182,7 +182,7 @@ public class CheckPoint : MonoBehaviour {
 						DistanceToNextCheckpoint [i] += Vector3.Distance (ShipCheckpoints [i].checkpointNodes[j].transform.position, ShipCheckpoints [i].checkpointNodes[j + 1].transform.position);
 						//ShipCheckpoints[i].Distance += Vector3.Distance (ShipCheckpoints [i].checkPointArray [j].transform.position, ShipCheckpoints [i].checkPointArray [j + 1].transform.position);
 					}
-					DistanceToNextCheckpoint[i] += ShipCheckpoints [i].DistanceToNextCheckPoint * 100; 
+					DistanceToNextCheckpoint[i] += ShipCheckpoints [i].DistanceToNextCheckPoint * 1000; 
 				}
 
 			}

@@ -82,7 +82,7 @@ public class Pausing : MonoBehaviour {
 	IEnumerator FadeToRestart () {
 		float fadeTime = GameObject.Find ("_Managers").GetComponent<Fading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		SceneManager.LoadScene("RaceTrack1");
+		SceneManager.LoadScene("RaceTrackSinglePlayer");
 	}
 
 }

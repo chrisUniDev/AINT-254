@@ -3017,8 +3017,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: LeftHorizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: LeftHorizontal0
+  m_VerticalAxis: Vertical0
   m_SubmitButton: AButton_PS4
   m_CancelButton: BButton_PS4
   m_InputActionsPerSecond: 10
@@ -5481,7 +5481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PROFILE
+  m_Text: PAUSE
 --- !u!222 &490485607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18415,6 +18415,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 8300000, guid: 452c6940464a0124f9ad89b6622ab407, type: 3}
+    - target: {fileID: 11427800, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
+      propertyPath: m_Text
+      value: 2 PLAYER CO OP
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
   m_IsPrefabParent: 0
@@ -20016,7 +20020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -399.69995, y: -173}
+  m_AnchoredPosition: {x: -399.69995, y: -200.1}
   m_SizeDelta: {x: 478, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849144936
@@ -20049,11 +20053,14 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'This prototype does not represent the final product so
 
-    you may experience bugs or missing features.'
+    you may experience bugs or missing features.
+
+
+    DISCLAIMER: 2 Controllers must be pluged in before the game is started!!'
 --- !u!222 &1849144937
 CanvasRenderer:
   m_ObjectHideFlags: 0

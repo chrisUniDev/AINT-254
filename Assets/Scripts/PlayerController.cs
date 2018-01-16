@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -99,13 +100,13 @@ public class PlayerController : MonoBehaviour
     {
         ShipAudio();
 
-        if (racePos.racePosition > 0)
+        if (racePos.racePosition > 1)
         {
-            SpeedRange.y = 1000 + 200;
+            SpeedRange.y = 600 + 200;
         }
         else
         {
-            SpeedRange.y = 1000;
+            SpeedRange.y = 600;
         }
 
 
@@ -114,7 +115,17 @@ public class PlayerController : MonoBehaviour
             UpdateInput();
             UpdateOrientationAndPos();
         }
+        UpdateBar();
 
+    }
+
+    public Image thrusterbar;
+    public Text thrusterpercentage;
+
+    public void UpdateBar()
+    {
+        thrusterbar.fillAmount = Input.GetAxis(ContThrottle);
+        thrusterpercentage.text = "" + Input.GetAxis(ContThrottle) * 100+"%";
     }
 
     private void FixedUpdate()

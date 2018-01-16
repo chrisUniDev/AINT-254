@@ -10,6 +10,8 @@ public class Death : MonoBehaviour {
     public GameObject mesh;
     public PlayerController controls;
 
+    public Collider m_collider;
+
     [SerializeField]private bool m_AI = false;
 
     shipCheckPoint m_checkRespawnValue;
@@ -38,14 +40,30 @@ public class Death : MonoBehaviour {
         
         yield return new WaitForSeconds(2);
         mesh.SetActive(true);
-        this.transform.position = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.position;
-        this.transform.rotation = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.rotation;
+        transform.position = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.position;
+        transform.rotation = m_checkRespawnValue.Respawnpoints[m_checkRespawnValue.currentCheckPoint - 1].transform.rotation;
         controls.enabled = true;
+        
     }
+
+    IEnumerator Wait()
+    {
+
+        yield return new WaitForSeconds(2);
+        m_collider.enabled = true;
+
+    }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
+        if (collision.gameObject.name != "ShipMeshPlayer")
+        {
+
+
+
             Debug.Log("HIT");
 
             if (rigidbody.velocity.magnitude > 10)
@@ -55,13 +73,13 @@ public class Death : MonoBehaviour {
                 mesh.SetActive(false);
                 controls.enabled = false;
                 Instantiate(explosion, mesh.gameObject.transform.position, Quaternion.identity);
+                m_collider.enabled = false;
                 StartCoroutine(WaitTeleoport());
-                //wait 2 seconds
-                //teleport player
-                //enable ship body 
+                StartCoroutine(Wait());
 
 
-          
+
+
 
 
 
@@ -81,10 +99,11 @@ public class Death : MonoBehaviour {
                     }
 
 
-                    
+
                 }
                 Debug.Log("Player Explosion");
             }
         }
+    }
     
 }
