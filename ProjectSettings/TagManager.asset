@@ -9,6 +9,7 @@ TagManager:
   - checkpoints
   - RespawnPoint
   - Object
+  - checkpoint
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - UI2
   - player1
   - player2
-  - 
-  - 
-  - 
+  - Checkpoint
+  - MiniMap
+  - Cam
   - 
   - 
   - 
