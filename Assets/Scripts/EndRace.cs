@@ -24,12 +24,12 @@ public class EndRace : MonoBehaviour
 
     private void Start()
     {
-        Ships = GameObject.FindGameObjectsWithTag("Ship");
-        ShipsMesh = new GameObject[Ships.Length];
+        Ships = GameObject.FindGameObjectsWithTag("ShipMesh");
+        ShipsMesh = GameObject.FindGameObjectsWithTag("ShipMesh");
 
         for (int i = 0; i < ShipsMesh.Length; i++)
         {
-            ShipsMesh[i] = GameObject.FindGameObjectWithTag("ShipMesh");
+            //ShipsMesh[i] = GameObject.FindGameObjectWithTag("ShipMesh");
         }
 
         ShipCheckpoints = new shipCheckPoint[ShipsMesh.Length];
@@ -42,42 +42,77 @@ public class EndRace : MonoBehaviour
         }
     }
 
+    bool done = false;
 
     // Update is called once per frame
     void Update()
     {
         lap = checkpointSystem.getLap;
 
-        if (lap == maxiumLap + 1)
+        if (lap == maxiumLap + 1 && done == false)
         {
             StartCoroutine(FadeToExitGameScreen());
+
+
+            for (int i = 0; i < Ships.Length; i++)
+            {
+                //Ships[i].SetActive(false);
+            }
+
+
         }
+
+
+
+
     }
+
+    
 
 
     IEnumerator FadeToExitGameScreen()
     {
-        for (int i = 0; i < Ships.Length; i++)
-        {
+        done = true;
 
+        for (int i = 0; i < ShipCheckpoints.Length; i++)
+        {
             for (int j = 0; j < ShipCheckpoints.Length; j++)
             {
-                if (ShipCheckpoints[j].racePosition == i)
+                if (ShipCheckpoints[j].racePosition - 1 == i)
                 {
-                    
+                    Debug.Log("Player:" + ShipCheckpoints[j].Name + " POS" + ShipCheckpoints[j].racePosition);
+                }
+            }
+        }
+
+
+
+        for (int i = 0; i < Ships.Length; i++)
+        {
+            for (int j = 0; j < ShipCheckpoints.Length; j++)
+            {
+                
+
+                if (ShipCheckpoints[j].racePosition -1 == i)
+                {
+
+                    Debug.Log(i);
+
+                    if (gridStats[i].gameObject.transform.GetChild(0).name == "Pos")
+                    {
+                        gridStats[i].gameObject.transform.GetChild(0).GetComponent<Text>().text = (ShipCheckpoints[j].racePosition).ToString();
+                    }
 
 
                     if (gridStats[i].gameObject.transform.GetChild(1).name == "Name")
                     {
 
                         gridStats[i].gameObject.transform.GetChild(1).GetComponent<Text>().text = ShipCheckpoints[j].Name;
+                        Debug.Log(ShipCheckpoints[j].Name);
                     }
 
 
-                    if (gridStats[i].GetComponentInChildren<Text>().name == "Pos")
-                    {
-                        gridStats[i].GetComponentInChildren<Text>().text = (ShipCheckpoints[j].racePosition + 1).ToString();
-                    }
+         
 
                     if (gridStats[i].gameObject.transform.GetChild(2).name == "Time")
                     {
@@ -92,7 +127,7 @@ public class EndRace : MonoBehaviour
 
            
         }
-
+        
         if (gridStats.Length > Ships.Length)
         {
             for (int i = Ships.Length; i < gridStats.Length; i++)
@@ -117,12 +152,9 @@ public class EndRace : MonoBehaviour
             }
         }
 
+       
 
 
-        for (int i = 0; i < Ships.Length; i++)
-        {
-            Ships[i].SetActive(false);
-        }
         mainCanvas.SetActive(false);
         float fadeTime = GameObject.Find("_Managers").GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);

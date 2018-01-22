@@ -71,13 +71,18 @@ public class CheckPoint : MonoBehaviour {
 		FindLeadingCheckpoint ();
 		CheckDistanceToNextCheckPoint ();
 		OrderPostions ();
-		CheckDistanceWithShips ();
+		
 
 		getLap = lap;
 	}
 
+    private void FixedUpdate()
+    {
+        CheckDistanceWithShips();
+    }
 
-	void OnTriggerEnter(Collider coll)
+
+    void OnTriggerEnter(Collider coll)
 	{
 		
 		//if (coll.gameObject.tag == "ShipMesh") {
