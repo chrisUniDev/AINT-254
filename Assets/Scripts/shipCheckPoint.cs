@@ -13,6 +13,7 @@ public class shipCheckPoint : MonoBehaviour {
     private int m_cashedCheckpoint;
     private int m_cashedLap;
     public int currentLap = 0;
+    
 	public Vector3 startPos;
 
     public Text displayReturnTrack;

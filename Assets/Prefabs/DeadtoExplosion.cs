@@ -11,13 +11,9 @@ public class DeadtoExplosion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        wait();
+        Destroy(gameObject, 2);
 
     }
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
-    }
+
    
 }
