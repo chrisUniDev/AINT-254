@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
         if (racePos.racePosition > 1)
         {
-            SpeedRange.y = 600 + 200;
+            SpeedRange.y = 600 + 50;
         }
         else
         {

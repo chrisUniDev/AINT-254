@@ -9138,6 +9138,7 @@ MonoBehaviour:
   stPos: {fileID: 688207095}
   canvas1: {fileID: 620823936}
   canvas2: {fileID: 1487243788}
+  mainCavas: {fileID: 728661679}
 --- !u!4 &325496326
 Transform:
   m_ObjectHideFlags: 0
@@ -21119,7 +21120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.x
@@ -23201,7 +23202,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 22455100, guid: 9df9500178c3a004ab826c0eede28189, type: 2}
       propertyPath: m_SizeDelta.x

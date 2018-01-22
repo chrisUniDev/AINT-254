@@ -25,6 +25,7 @@ public class EndRace : MonoBehaviour
 
     public GameObject canvas1;
     public GameObject canvas2;
+    public GameObject mainCavas;
 
 
     private void Start()
@@ -74,7 +75,7 @@ public class EndRace : MonoBehaviour
 
             canvas1.SetActive(false);
             canvas2.SetActive(false);
-
+            mainCavas.SetActive(false);
 
         }
 
