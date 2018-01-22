@@ -9,6 +9,7 @@ public class Death : MonoBehaviour {
     Rigidbody rigidbody;
     public GameObject mesh;
     public PlayerController controls;
+    public int numberOfDeath = 0;
 
     public Collider m_collider;
 
@@ -76,7 +77,7 @@ public class Death : MonoBehaviour {
                 m_collider.enabled = false;
                 StartCoroutine(WaitTeleoport());
                 StartCoroutine(Wait());
-
+                numberOfDeath++;
 
 
 

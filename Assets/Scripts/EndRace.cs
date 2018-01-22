@@ -9,6 +9,7 @@ public class EndRace : MonoBehaviour
     GameObject[] Ships;
     GameObject[] ShipsMesh;
     shipCheckPoint[] ShipCheckpoints;
+    Death[] death;
 
     public GameObject mainCanvas;
 
@@ -27,11 +28,14 @@ public class EndRace : MonoBehaviour
     public GameObject canvas2;
     public GameObject mainCavas;
 
+    public Text totalDeath;
+
 
     private void Start()
     {
         Ships = GameObject.FindGameObjectsWithTag("ShipMesh");
         ShipsMesh = GameObject.FindGameObjectsWithTag("ShipMesh");
+       
 
         for (int i = 0; i < ShipsMesh.Length; i++)
         {
@@ -40,20 +44,24 @@ public class EndRace : MonoBehaviour
 
         ShipCheckpoints = new shipCheckPoint[ShipsMesh.Length];
         //PlayerCheckpoints = Player.GetComponent<shipCheckPoint> ();
+        death = new Death[ShipsMesh.Length];
 
 
         for (int i = 0; i < Ships.Length; i++)
         {
             ShipCheckpoints[i] = Ships[i].GetComponentInChildren<shipCheckPoint>();
+            death[i] = Ships[i].GetComponentInChildren<Death>();
         }
     }
 
     bool done = false;
+    int totalDeathnum;
 
     // Update is called once per frame
     void Update()
     {
         lap = checkpointSystem.getLap;
+        
 
         if (lap == maxiumLap + 1 && done == false)
         {
@@ -69,13 +77,16 @@ public class EndRace : MonoBehaviour
                 {
                     stPos.text = ShipCheckpoints[i].Name;
                 }
+                totalDeathnum += death[i].numberOfDeath;
 
                 Ships[i].SetActive(false);
             }
 
+
             canvas1.SetActive(false);
             canvas2.SetActive(false);
             mainCavas.SetActive(false);
+            totalDeath.text = "" + totalDeathnum;
 
         }
 
