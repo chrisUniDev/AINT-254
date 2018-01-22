@@ -9135,6 +9135,9 @@ MonoBehaviour:
   checkpointSystem: {fileID: 182022541}
   EndgameCanvas: {fileID: 152808724}
   maxiumLap: 0
+  stPos: {fileID: 688207095}
+  canvas1: {fileID: 620823936}
+  canvas2: {fileID: 1487243788}
 --- !u!4 &325496326
 Transform:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class CheckPoint : MonoBehaviour {
 
 
@@ -12,6 +13,7 @@ public class CheckPoint : MonoBehaviour {
 	public bool disableUI;
 
 	shipCheckPoint[] ShipCheckpoints;
+
 
 	//public GameObject currentCheckpointUI;
 	//public GameObject nextCheckpointUI;
@@ -179,7 +181,7 @@ public class CheckPoint : MonoBehaviour {
 	
 					//DistanceToNextCheckpoint [i] = ShipCheckpoints [i].DistanceToNextCheckPoint + Vector3.Distance (ShipCheckpoints [i].checkPointArray [ShipCheckpoints [i].currentCheckPoint].transform.position, ShipCheckpoints [i].checkPointArray [checkpoint].transform.position);
 				}
-			} else if(ShipCheckpoints [i].currentLap < lap) {
+			} if(ShipCheckpoints [i].currentLap < lap) {
 
 				for (int k = ShipCheckpoints [i].currentLap; k < lap; k++) {
 					//DistanceToNextCheckpoint [i] = ShipCheckpoints [i].DistanceToNextCheckPoint + Vector3.Distance (ShipCheckpoints [i].checkPointArray [ShipCheckpoints [i].currentCheckPoint].transform.position, ShipCheckpoints [i].checkPointArray [checkpoint].transform.position) * ((lap*1) * 1000);
@@ -187,7 +189,7 @@ public class CheckPoint : MonoBehaviour {
 						DistanceToNextCheckpoint [i] += Vector3.Distance (ShipCheckpoints [i].checkpointNodes[j].transform.position, ShipCheckpoints [i].checkpointNodes[j + 1].transform.position);
 						//ShipCheckpoints[i].Distance += Vector3.Distance (ShipCheckpoints [i].checkPointArray [j].transform.position, ShipCheckpoints [i].checkPointArray [j + 1].transform.position);
 					}
-					DistanceToNextCheckpoint[i] += ShipCheckpoints [i].DistanceToNextCheckPoint * 1000; 
+					DistanceToNextCheckpoint[i] += ShipCheckpoints [i].DistanceToNextCheckPoint * 10000; 
 				}
 
 			}

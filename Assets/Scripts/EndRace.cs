@@ -21,6 +21,11 @@ public class EndRace : MonoBehaviour
     int lap;
     public int maxiumLap;
 
+    public Text stPos;
+
+    public GameObject canvas1;
+    public GameObject canvas2;
+
 
     private void Start()
     {
@@ -51,13 +56,24 @@ public class EndRace : MonoBehaviour
 
         if (lap == maxiumLap + 1 && done == false)
         {
+            
+
+
             StartCoroutine(FadeToExitGameScreen());
 
 
             for (int i = 0; i < Ships.Length; i++)
             {
-                //Ships[i].SetActive(false);
+                if (ShipCheckpoints[i].racePosition == 1)
+                {
+                    stPos.text = ShipCheckpoints[i].Name;
+                }
+
+                Ships[i].SetActive(false);
             }
+
+            canvas1.SetActive(false);
+            canvas2.SetActive(false);
 
 
         }
