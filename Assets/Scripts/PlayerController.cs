@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviour
     public string ContThrottle; //Speed control (speed increase)
     public string ContThrottleReduct; //Speed control (speed reduction)
 
+    public ParticleSystem[] pr;
+
     void Start()
     {
         SmoothedInput = Vector4.zero;
@@ -126,6 +128,12 @@ public class PlayerController : MonoBehaviour
     {
         thrusterbar.fillAmount = Input.GetAxis(ContThrottle);
         thrusterpercentage.text = "" + Input.GetAxis(ContThrottle) * 100+"%";
+
+        for (int i = 0; i < pr.Length; i++)
+        {
+            //pr[i].startSize = Input.GetAxis(ContThrottle);
+            pr[i].startLifetime = Input.GetAxis(ContThrottle);
+        }
     }
 
     private void FixedUpdate()
