@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     public string ContAxisZ; //Rotation around z-axis
     public string ContThrottle; //Speed control (speed increase)
     public string ContThrottleReduct; //Speed control (speed reduction)
+    public string BoostButton; //TempBoost
 
     public ParticleSystem[] pr;
 
@@ -102,14 +103,22 @@ public class PlayerController : MonoBehaviour
     {
         ShipAudio();
 
-        if (racePos.racePosition > 1)
+
+        if (Input.GetButtonDown(BoostButton))
+        {
+
+            SpeedRange.y = 1000;
+            Debug.Log(SpeedRange.y);
+        }else if (racePos.racePosition > 1)
         {
             SpeedRange.y = 600 + 50;
         }
-        else
+        else if (racePos.racePosition < 1)
         {
+            Debug.Log("vbvb");
             SpeedRange.y = 600;
         }
+
 
 
         if (allowMovement == true)
@@ -248,6 +257,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis(ContThrottle) != 0)
         {
             currentRawInput.w = Input.GetAxis(ContThrottle) * 1.0f;
+
+      
         }
 
         if (Input.GetAxis(ContThrottleReduct) != 0)

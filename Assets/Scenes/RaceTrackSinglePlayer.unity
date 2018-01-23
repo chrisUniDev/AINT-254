@@ -1190,7 +1190,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64528739}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &64528741
 Behaviour:
   m_ObjectHideFlags: 0
@@ -11820,6 +11820,84 @@ Transform:
   m_Father: {fileID: 2031780932}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &440295386
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1510570372}
+    m_Modifications:
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4772
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -119
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2329
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.0026328375
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.9116989
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.13741226
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.38718995
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 8.278689
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 8.278689
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 8.278689
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 6.0280004
+      objectReference: {fileID: 0}
+    - target: {fileID: 175894, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 175894, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 175894, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_Name
+      value: Scifi_Platform_1b (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -14.6310005
+      objectReference: {fileID: 0}
+    - target: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 133.20401
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &442730857
 GameObject:
   m_ObjectHideFlags: 0
@@ -15299,7 +15377,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 919369269
+  randomSeed: 997114299
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -26792,6 +26870,7 @@ MonoBehaviour:
   ContAxisZ: RightHorizontal0
   ContThrottle: RightTrigger0
   ContThrottleReduct: LeftTrigger0
+  BoostButton: BButton_PS41
   pr:
   - {fileID: 682079822}
   - {fileID: 1932315945}
@@ -30760,6 +30839,11 @@ Prefab:
     - target: {fileID: 1390217454725154, guid: 45da6f564e189f54c8f6e86f7274d193, type: 2}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 81153152711188084, guid: 45da6f564e189f54c8f6e86f7274d193,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45da6f564e189f54c8f6e86f7274d193, type: 2}
@@ -36446,7 +36530,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345865915}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &1345865917
 Behaviour:
   m_ObjectHideFlags: 0
@@ -39571,6 +39655,7 @@ Transform:
   - {fileID: 1520750439}
   - {fileID: 2035145566}
   - {fileID: 1827955451}
+  - {fileID: 1963235383}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48753,6 +48838,28 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300316, guid: bb375fe2672dfa24a9df2435ef097756, type: 3}
+--- !u!1 &1963235382 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 175894, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+  m_PrefabInternal: {fileID: 440295386}
+--- !u!4 &1963235383 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 476458, guid: 860ae3a79bc7a0a4aaf74841f1073076, type: 2}
+  m_PrefabInternal: {fileID: 440295386}
+--- !u!64 &1963235384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963235382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 1d6b47e49ddbacc43830cf72cc888f62, type: 3}
 --- !u!1 &1967323497 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 177738, guid: 5b84c93d85043144c991880024f2339f, type: 2}
@@ -52326,6 +52433,7 @@ MonoBehaviour:
   ContAxisZ: RightHorizontal1
   ContThrottle: RightTrigger1
   ContThrottleReduct: LeftTrigger1
+  BoostButton: BButton_PS4
   pr:
   - {fileID: 682096681}
   - {fileID: 1180556199}
