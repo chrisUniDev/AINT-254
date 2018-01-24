@@ -103,21 +103,23 @@ public class PlayerController : MonoBehaviour
     {
         ShipAudio();
 
-
-        if (Input.GetButtonDown(BoostButton))
+        if (Input.GetButton(BoostButton) && thrusterbar.fillAmount > 0)
         {
-
-            SpeedRange.y = 1000;
-            Debug.Log(SpeedRange.y);
-        }else if (racePos.racePosition > 1)
+            
+            UpdateBar();
+        }
+        else if (racePos.racePosition > 1)
         {
             SpeedRange.y = 600 + 50;
+            Refillbar();
         }
-        else if (racePos.racePosition < 1)
+        else if (racePos.racePosition <= 1)
         {
-            Debug.Log("vbvb");
+      
             SpeedRange.y = 600;
+            Refillbar();
         }
+
 
 
 
@@ -126,23 +128,61 @@ public class PlayerController : MonoBehaviour
             UpdateInput();
             UpdateOrientationAndPos();
         }
-        UpdateBar();
-
-    }
-
-    public Image thrusterbar;
-    public Text thrusterpercentage;
-
-    public void UpdateBar()
-    {
-        thrusterbar.fillAmount = Input.GetAxis(ContThrottle);
-        thrusterpercentage.text = "" + Input.GetAxis(ContThrottle) * 100+"%";
 
         for (int i = 0; i < pr.Length; i++)
         {
             //pr[i].startSize = Input.GetAxis(ContThrottle);
             pr[i].startLifetime = Input.GetAxis(ContThrottle);
         }
+       
+
+    }
+
+    public Image thrusterbar;
+    public Text thrusterpercentage;
+
+    bool boostdone = true;
+
+    private float fillamount = 0.1f;
+
+    public void UpdateBar()
+    {
+
+        if (boostdone)
+        {
+            thrusterbar.fillAmount = thrusterbar.fillAmount - fillamount * Time.deltaTime;
+            fillamount = fillamount + 0.2f;
+            SpeedRange.y = 1200;
+        }
+
+        if (thrusterbar.fillAmount <= 0f)
+        {
+            boostdone = false;
+        }
+ 
+        //thrusterbar.fillAmount = Input.GetAxis(ContThrottle);
+        //thrusterpercentage.text = "" + thrusterbar.fillAmount * 100;
+
+
+
+    }
+
+  
+
+    private void Refillbar()
+    {
+        if (thrusterbar.fillAmount < 1)
+        {
+            thrusterbar.fillAmount +=  + 0.05f * Time.deltaTime;
+            //thrusterpercentage.text = "" + thrusterbar.fillAmount * 100;
+            fillamount = 0;
+        }
+
+        if (thrusterbar.fillAmount == 1)
+        {
+            boostdone = true;
+        }
+      
     }
 
     private void FixedUpdate()
